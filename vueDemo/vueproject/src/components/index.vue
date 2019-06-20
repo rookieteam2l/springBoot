@@ -509,6 +509,8 @@
 </template>
 
 <script>
+  import $ from 'jquery'
+
 export default {
   name: 'index',
   data () {
@@ -558,5 +560,5 @@ export default {
 <style scoped>
   @import '../../static/css/index.css';
   @import '../../static/js/index.js';
-/* @import '../../static/js/jquery-3.4.1.js';*/
+
 </style>

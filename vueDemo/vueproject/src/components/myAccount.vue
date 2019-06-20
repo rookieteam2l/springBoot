@@ -301,6 +301,8 @@
 </template>
 
 <script>
+  import $ from 'jquery'
+
 export default {
   name: 'myAccount',
   data () {
@@ -315,5 +317,4 @@ export default {
 <style scoped>
   @import '../../static/css/myAccount.css';
   @import '../../static/js/myAccount.js';
-  @import '../../static/js/jquery-3.4.1.js';
 </style>

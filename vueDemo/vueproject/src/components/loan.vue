@@ -173,6 +173,8 @@
 </template>
 
 <script>
+  import $ from 'jquery'
+
 export default {
   name: 'loan',
   data () {
@@ -187,5 +189,4 @@ export default {
 <style scoped>
   @import '../../static/css/loan.css';
   @import '../../static/js/loan.js';
-  @import '../../static/js/jquery-3.4.1.js';
 </style>

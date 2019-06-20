@@ -181,6 +181,7 @@
 </template>
 
 <script>
+  import $ from 'jquery'
 export default {
   name: 'wyhk',
   data () {
@@ -193,5 +194,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  @import '../../static/js/jquery-3.4.1.js';
 </style>

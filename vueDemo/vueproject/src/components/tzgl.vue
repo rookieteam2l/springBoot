@@ -233,6 +233,7 @@
 </template>
 
 <script>
+  import $ from 'jquery'
 export default {
   name: 'tzgl',
   data () {
@@ -247,5 +248,4 @@ export default {
 <style scoped>
   @import '../../static/css/tzgl.css';
   @import '../../static/js/tzgl.js';
-  @import '../../static/js/jquery-3.4.1.js';
 </style>

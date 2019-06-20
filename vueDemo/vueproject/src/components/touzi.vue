@@ -5,6 +5,8 @@
 </template>
 
 <script>
+  import $ from 'jquery'
+
 export default {
   name: 'touzi',
   data () {
@@ -19,5 +21,4 @@ export default {
 <style scoped>
   @import '../../static/css/touzhi.css';
   @import '../../static/js/touzhi.js';
-  @import '../../static/js/jquery-3.4.1.js';
 </style>

@@ -109,6 +109,8 @@
 </template>
 
 <script>
+  import $ from 'jquery'
+
 export default {
   name: 'reg_ok',
   data () {
@@ -123,5 +125,4 @@ export default {
 <style scoped>
   @import '../../static/css/reg_ok.css';
   @import '../../static/js/reg_ok.js';
-  @import '../../static/js/jquery-3.4.1.js';
 </style>
