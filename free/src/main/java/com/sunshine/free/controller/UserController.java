@@ -2,17 +2,18 @@ package com.sunshine.free.controller;
 
 import com.sunshine.free.entity.User;
 import com.sunshine.free.mapper.UserMapper;
+import com.sunshine.free.utils.CommonResponse;
+import com.sunshine.free.utils.ResponseTypeEnums;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
 @RequestMapping("/user/*")
 public class UserController {
+
 
     @SuppressWarnings("all")
     @Autowired
@@ -21,6 +22,17 @@ public class UserController {
     @GetMapping("list")
     public List<User> list() {
         return userMapper.list();
+    }
+
+
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    public @ResponseBody
+    CommonResponse Login(HttpServletRequest req , User user){
+
+        User record = new User();
+        String userId = user.getUserId();
+        record.setUsername("lisi");
+       return new CommonResponse<User>(ResponseTypeEnums.SUCCESS,null,null,record);
     }
 
     @GetMapping("list/{username}")
@@ -37,6 +49,5 @@ public class UserController {
     public User getBadUser(@PathVariable("username") String username, @PathVariable("password") String password) {
         return userMapper.getBadUser(username, password);
     }
-
 
 }
