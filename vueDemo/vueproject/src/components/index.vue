@@ -74,7 +74,7 @@
       </div>
       <div class="middle_3">
         <div class="middle_3_1 title">
-          <span class="middle_3_1_span">测试2017051701</span>
+          <span class="middle_3_1_span">测试2019{{addFrom.username}}</span>
           <img src="img/hot.jpg"/>
         </div>
         <ul class="middle_3_2">
@@ -103,7 +103,7 @@
         </div>
 
         <div class="middle_3_3">
-          <a href="touzhi.html">我要投资</a>
+          <a href="#"  onclick="postceshi()">我要投资</a>
         </div>
       </div>
 
@@ -513,10 +513,45 @@ export default {
   name: 'index',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+
+      userId: '',
+      username: '',
+      addFrom:[{
+        userId:'',
+        username:'',
+
+      }]
     }
+  },
+
+  methods:{
+    postceshi(){
+      this.$axios({
+        method:'post',
+        url:'/api/user/login',
+        data:this.qs.stringify({    //这里是发送给后台的数据
+          userId:'123',
+          username:'zhangsan',
+        })
+      }).then((response) =>{          //这里使用了ES6的语法
+        console.log(response);
+        this.addFrom = response.data.result;//请求成功返回的数据
+        alert(response.data.result.username);
+      }).catch((error) =>{
+        console.log(error)       //请求失败返回的数据
+      })
+    },
+  },
+
+  mounted(){
+
+    this.postceshi();
   }
-}
+
+  }
+
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
