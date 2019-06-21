@@ -14,11 +14,11 @@
       <div class="top2">
         <div class="top_2">
           <ul class="top_2_ul">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="touzhi.html">我要理财</a></li>
-            <li><a href="loan.html">我要借款</a></li>
-            <li><a href="wyhk.html">我要还款</a></li>
-            <li><a href="myAccount.html">我的账户</a></li>
+            <li><router-link to="/">首页</router-link></li>
+            <li><router-link to="/touzi">我要理财</router-link></li>
+            <li><router-link to="/loan">我要借款</router-link></li>
+            <li><router-link to="/wyhk">我要还款</router-link></li>
+            <li><router-link to="/myAccount">我的账户</router-link></li>
           </ul>
         </div>
       </div>
@@ -39,7 +39,7 @@
 
           <div class="content_photo">
             <div class="photo">
-              <img src="img/未标题-1.png"/>
+              <img src="../../static/img/未标题-1.png"/>
             </div>
             <input type="file" />
           </div>
@@ -200,15 +200,15 @@
         <div class="bottom_zbox">
           <div class="zbox_1">
             <div class="bottom_img1">
-              <img src="img/wb.jpg"/>
+              <img src="../../static/img/wb.jpg"/>
               新浪微博
             </div>
             <div class="bottom_img1">
-              <img src="img/wx.jpg"/>
+              <img src="../../static/img/wx.jpg"/>
               微信
             </div>
             <div class="bottom_img1">
-              <img src="img/sj.jpg"/>
+              <img src="../../static/img/sj.jpg"/>
               手机APP
             </div>
           </div>
@@ -216,30 +216,66 @@
 
         <div class="server">
           <div class="bottom_text">客服电话</div>
-          <div class="bottom_text2">400-611-4589</div>
+          <div class="bottom_text2">666-666-8888</div>
           <div class="bottom_text3">
-            <p class="s1">server@hmjr99.com</p>
+            <p class="s1">123456789@qq.com</p>
             <p class="s2">09:30 - 18:00</p>
 
           </div>
         </div>
-   </div>
+
+      </div>
+
       <div class="bottom_content2">
-        <p class="p11"><img src="img/cxwz.jpg"/></p>
-        <p class="p22">Copyright©2014 浩茗金融 版权所有 沪ICP备16002185号-1</p>
+
+        <p class="p11"><img src="../../static/img/cxwz.jpg"/></p>
+
+
+        <p class="p22">Copyright©2019  版权所有 </p>
+
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import $ from 'jquery'
+
 export default {
   name: 'tzgl',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  methods:{
+    init(){
+// 左侧列表
+      var li = $('ul.list_mi li a');
+      li.eq(1).css('color','#f35d08').css('background','#fff');
+      $.each(li,function(index,value){
+        $(this).hover(function(){
+          $(this).css('color','#f35d08').css('background','#fff');
+          li.eq(1).css('color','#f35d08').css('background','#fff');
+        },function(){
+          $(this).css('color','#fff').css('background','#f7772c');
+          li.eq(1).css('color','#f35d08').css('background','#fff');
+        });
+
+      });
+
+// tab切换栏
+      var tab_li = $('.teble_tab ul li');
+      tab_li.eq(0).css('color','#f7772c').css('borderBottom','none');
+      $.each(tab_li,function(index,value){
+        $(this).click(function(){
+          $(this).css('color','#f7772c').css('borderBottom','none').siblings().css('color','#665d56').css('borderBottom','#e7e7e7 solid 1px');
+        });
+      });
+    }
+  },
+
+  mounted() {
+    this.init();
   }
 }
 </script>
@@ -247,5 +283,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   @import '../../static/css/tzgl.css';
-  @import '../../static/js/tzgl.js';
 </style>

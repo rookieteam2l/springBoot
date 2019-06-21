@@ -14,11 +14,11 @@
       <div class="top2">
         <div class="top_2">
           <ul class="top_2_ul">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="touzhi.html">我要理财</a></li>
-            <li><a href="loan.html">我要借款</a></li>
-            <li><a href="wyhk.html">我要还款</a></li>
-            <li><a href="myAccount.html">我的账户</a></li>
+            <li><router-link to="/">首页</router-link></li>
+            <li><router-link to="/touzi">我要理财</router-link></li>
+            <li><router-link to="/loan">我要借款</router-link></li>
+            <li><router-link to="/wyhk">我要还款</router-link></li>
+            <li><router-link to="/myAccount">我的账户</router-link></li>
           </ul>
         </div>
       </div>
@@ -42,7 +42,7 @@
 						<span class="s1">
 						金融P2P平台的借款功能旨在帮助借款用户以低成本获得借款。用户在需要资金时。可通过抵押、质押、信用、担保等借款方式申请借款，浩茗金融线下审核评估后，将会根据结款方式给出融资方案。
 						</span>
-            <img src="img/gz.jpg"/>
+            <img src="../../static/img/gz.jpg"/>
             <div class="kb"></div>
             <h3>申请条件:</h3>
             <p>1、年龄在22周岁（含）-55周岁（含）具有完全民事行为能力的自然人；</p>
@@ -95,7 +95,7 @@
 
             <span>验证码：</span>
             <input class="yzm" />
-            <img src="img/yzm.jpg"/>
+            <img src="../../static/img/yzm.jpg"/>
             <a>换一张</a>
             <p>提交申请</p>
           </div>
@@ -133,15 +133,15 @@
         <div class="bottom_zbox">
           <div class="zbox_1">
             <div class="bottom_img1">
-              <img src="img/wb.jpg"/>
+              <img src="../../static/img/wb.jpg"/>
               新浪微博
             </div>
             <div class="bottom_img1">
-              <img src="img/wx.jpg"/>
+              <img src="../../static/img/wx.jpg"/>
               微信
             </div>
             <div class="bottom_img1">
-              <img src="img/sj.jpg"/>
+              <img src="../../static/img/sj.jpg"/>
               手机APP
             </div>
           </div>
@@ -149,9 +149,9 @@
 
         <div class="server">
           <div class="bottom_text">客服电话</div>
-          <div class="bottom_text2">400-611-4589</div>
+          <div class="bottom_text2">666-666-8888</div>
           <div class="bottom_text3">
-            <p class="s1">server@hmjr99.com</p>
+            <p class="s1">123456789@qq.com</p>
             <p class="s2">09:30 - 18:00</p>
 
           </div>
@@ -161,10 +161,10 @@
 
       <div class="bottom_content2">
 
-        <p class="p11"><img src="img/cxwz.jpg"/></p>
+        <p class="p11"><img src="../../static/img/cxwz.jpg"/></p>
 
 
-        <p class="p22">Copyright©2014 浩茗金融 版权所有 沪ICP备16002185号-1</p>
+        <p class="p22">Copyright©2019  版权所有 </p>
 
       </div>
 
@@ -173,13 +173,11 @@
 </template>
 
 <script>
-  import $ from 'jquery'
-
 export default {
   name: 'loan',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+
     }
   }
 }
@@ -188,5 +186,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   @import '../../static/css/loan.css';
-  @import '../../static/js/loan.js';
 </style>
