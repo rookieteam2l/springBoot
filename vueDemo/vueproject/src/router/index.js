@@ -9,7 +9,6 @@ import reg from '@/components/reg'
 import reg_ok from '@/components/reg_ok'
 import touzi from '@/components/touzi'
 import tzgl from '@/components/tzgl'
-import check_borrow from '@/view/Backstage/check_borrow'
 
 
 
@@ -61,12 +60,7 @@ export default new Router({
       path: '/tzgl',
       name: 'tzgl',
       component: tzgl
-    },,
-    {
-      path: '/check_borrow',
-      name: 'check_borrow',
-      component: check_borrow
-    },
+    }
   ],
 
     mode:"history"
