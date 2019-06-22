@@ -1,5 +1,10 @@
 package com.sunshine.free.entity;
 
+/**
+ * @author  free
+ * @date 2019-06-20
+ */
+
 public class User {
     private String userId;
     private String username;

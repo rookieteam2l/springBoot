@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>个人信息 - 金融P2P后台管理系统</title>
+		<meta name="description" content="This is page-header (.page-header &gt; h1)" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="assets/css/ace.min.css" id="main-ace-style" />
+		
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+		
+	</head>
+
+	<body class="no-skin">
+		<div id="navbar" class="navbar navbar-default">
+			<div class="navbar-container" id="navbar-container">
+				<div class="navbar-header pull-left">
+					<a href="index.html" class="navbar-brand">
+						<small>
+							<img src="assets/avatars/logo.png" alt="" />
+						</small>
+					</a>
+				</div>
+
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
+								<span class="user-info">
+									欢迎您<br />
+									张三丰
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="personal.html">
+										<i class="ace-icon fa fa-user"></i>
+										个人信息设置
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="login.html">
+										<i class="ace-icon fa fa-power-off"></i>
+										退出
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- /section:basics/navbar.layout -->
+		<div class="main-container" id="main-container">
+
+			<div id="sidebar" class="sidebar responsive">
+
+
+				<ul class="nav nav-list">
+					<li class="active">
+						<a href="index.html">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> 菜单列表 </span>
+						</a>
+						<b class="arrow"></b>
+					</li>
+
+					<li class="#">
+						<a href="" class="dropdown-toggle">
+							<i class="menu-icon fa fa-tag"></i>
+							<span class="menu-text">用户管理 </span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+						<ul class="submenu">
+
+							<li class="">
+								<a href="user.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									用户信息
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="employee.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									后台用户信息
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							
+							<li class="">
+								<a href="role.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									角色信息
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text">借款管理</span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+
+							<li class="">
+								<a href="uncheck_borrow.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									未审核借款
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="check_borrow.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									已审核借款
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="unpass_borrow.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									未通过借款
+								</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>	
+					</li>
+	
+					<!--  -->
+					<li class="">
+						<a href="project.html">
+							<i class="menu-icon fa fa-list-alt"></i>
+							<span class="menu-text">项目管理</span>
+						</a>
+						<b class="arrow"></b>
+						
+					</li>
+					
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text">还款管理</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+						<ul class="submenu">
+
+							<li class="">
+								<a href="unrepayment.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									未还款信息
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="repayment.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									已还款信息
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-pencil-square-o"></i>
+							<span class="menu-text">统计管理</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+						<ul class="submenu">
+							<li class="">
+								<a href="statistics_user.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									近一周用户使用信息
+								</a>
+								<b class="arrow"></b>
+							</li>
+							
+						</ul>
+					</li>
+
+				</ul>
+
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+
+			</div>
+
+			<div class="main-content">
+				
+				<div class="breadcrumbs" id="breadcrumbs">
+					<ul class="breadcrumb">
+						<li>
+							<i class="ace-icon fa fa-home home-icon"></i>
+							<a href="index.html">首页</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">借款管理</a>
+						</li>
+						<li>
+							<a href="check_borrow.html">已审核借款</a>
+						</li>
+						<li>
+							<a href="generate_project.html">发布项目</a>
+						</li>
+						
+					</ul>
+				</div>
+				
+				<div class="page-content">
+				
+					<div class="page-content-area">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="table-header">
+											发布项目
+										</div>
+										 
+
+										<form class="form-horizontal" role="form">
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 项目名称：</label>
+												<div class="col-sm-9">
+													<input type="text" id="form-field-1" placeholder="输入项目名称" class="col-xs-10 col-sm-5" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">申请人： </label>
+												<div class="col-sm-9">
+													<input type="text" id="form-field-1-1" placeholder="输入申请人" class=" col-xs-10 col-sm-5" />
+												</div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">信用类型</label>
+												<div class="col-sm-2">
+													<div class="pos-rel">
+														<select class="form-control" id="form-field-select-1">
+															<option value="-1">请选择</option>
+															<option value="信用">信用</option>
+															<option value="质押">质押</option>
+															<option value="抵押">抵押</option>
+															<option value="担保">担保</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">贷款总额： </label>
+												<div class="col-sm-9">
+													<input type="text" id="form-field-1-1" placeholder="输入贷款总额" class=" col-xs-10 col-sm-5" />
+												</div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">年利率： </label>
+												<div class="col-sm-9">
+													<input type="text" id="form-field-1-1" placeholder="输入年利率" class=" col-xs-10 col-sm-5" />%
+												</div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">贷款期限</label>
+												<div class="col-sm-2">
+													<div class="pos-rel">
+														<select class="form-control" id="form-field-select-1">
+															<option value="-1">贷款期限</option>
+															<option value="1">1月</option>
+															<option value="2">2月</option>
+															<option value="3">3月</option>
+															<option value="4">4月</option>
+															<option value="5">5月</option>
+															<option value="6">6月</option>
+															<option value="7">7月</option>
+															<option value="8">8月</option>
+															<option value="9">9月</option>
+															<option value="10">10月</option>
+															<option value="11">11月</option>
+															<option value="12">12月</option>
+															<option value="24">24月</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">贷款用途</label>
+												<div class="col-sm-2">
+													<div class="pos-rel">
+														<select class="form-control" id="form-field-select-1">
+															<option value="-1">请选择用途</option>
+															<option value="1">短期周转</option>
+															<option value="2">生意周转</option>
+															<option value="3">生活周转</option>
+															<option value="4">购物消费</option>
+															<option value="5">不提现借款</option>
+															<option value="6">创业借款</option>
+															<option value="7">其他借款</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-2">投标密码： </label>
+
+												<div class="col-sm-9">
+													<input type="password" id="form-field-2" placeholder="输入投标密码" class="col-xs-10 col-sm-5" />
+												</div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">最低投标金额</label>
+												<div class="col-sm-2">
+													<div class="pos-rel">
+														<select class="form-control" id="form-field-select-1">
+															<option value="-1">请选择最低投标金额</option>
+															<option value="1">1元</option>
+															<option value="50">50元</option>
+															<option value="100">100元</option>
+															<option value="150">150元</option>
+															<option value="200">200元</option>
+															<option value="300">300元</option>
+															<option value="500">500元</option>
+															<option value="1000">1000元</option>
+															<option value="1500">1500元</option>
+															<option value="3000">3000元</option>
+															<option value="5000">5000元</option>
+															<option value="10000">10000元</option>
+														</select>
+														
+													</div>
+												</div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">最高投标金额</label>
+												<div class="col-sm-2">
+													<div class="pos-rel">
+														
+														<select class="form-control" id="form-field-select-1">
+															<option value="-1">没有限制</option>
+															<option value="2000">2000元</option>
+															<option value="5000">5000元</option>
+															<option value="10000">10000元</option>
+															<option value="15000">15000元</option>
+															<option value="20000">20000元</option>
+															<option value="50000">50000元</option>
+															<option value="100000">100000元</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">有效时间</label>
+												<div class="col-sm-2">
+													<div class="pos-rel">
+														<select class="form-control" id="form-field-select-1">
+															<option value="-1">请选择有效时间</option>
+															<option value="1">1天</option>
+															<option value="2">2天</option>
+															<option value="3">3天</option>
+															<option value="4">4天</option>
+															<option value="5">5天</option>
+															<option value="6">6天</option>
+															<option value="7">7天</option>
+														</select>
+														
+													</div>
+												</div>
+											</div>
+											
+											
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">还款方式</label>
+												<div class="col-sm-2">
+													<div class="pos-rel">
+														<select class="form-control" id="form-field-select-1">
+															<option value="-1">请选择还款方式</option>
+															<option value="1">到期还本付息</option>
+															<option value="2">按月分期</option>
+															<option value="3">先息后本</option>
+														</select>
+														
+													</div>
+												</div>
+											</div>
+											
+											<div class="clearfix form-actions">
+												<div class="col-md-offset-3 col-md-9">
+													<button class="btn btn-info" type="button">
+														<i class="ace-icon fa fa-check bigger-110"></i>
+														立即提交
+													</button>
+
+													&nbsp; &nbsp; &nbsp;
+													<button class="btn" type="reset">
+														<i class="ace-icon fa fa-undo bigger-110"></i>
+														重置
+													</button>
+												</div>
+											</div>
+
+											
+
+										</form>
+									</div>
+								</div>
+
+			
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div>
+				
+				
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			<div class="footer">
+				<div class="footer-inner">
+					<div class="footer-content">
+						<span class="bigger-120">
+							 金融P2P后台 &copy; 2018
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		
+		<script type="text/javascript" src='assets/js/jquery.min.js'></script>
+		
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/jquery-ui.custom.min.js"></script>
+		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="assets/js/ace-elements.min.js"></script>
+		<script src="assets/js/ace.min.js"></script>
+
+	</body>
+</html>

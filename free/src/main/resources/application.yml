@@ -8,18 +8,23 @@ spring:
     cache: false
     suffix: .html
     encoding: UTF-8
-    content-type: text/html
+    prefix: classpath:/templates/ #调整页面路径
+    servlet:
+      content-type: text/html
     mode: HTML5
 #数据源配置
   datasource:
-    url: jdbc:mysql://47.100.197.44:3306/socks?useSSL=false
+    url: jdbc:mysql://localhost:3306/p2p?useSSL=false
     username: root
-    password: root
+    password: 178003026
     driver-class-name: com.mysql.jdbc.Driver
 
 mybatis:
   configuration:
     map-underscore-to-camel-case: true #开启驼峰映射
+  mapper-locations:
+    - classpath:mappers/*.xml
+  type-aliases-package: com.sunshine.free.entity
 
 logging:
   level:

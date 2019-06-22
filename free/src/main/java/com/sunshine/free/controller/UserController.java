@@ -10,6 +10,13 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+/**
+ * sql查询练习
+ *
+ * @author Free
+ * @date 2019-06-20
+ */
+
 @RestController
 @RequestMapping("/user/*")
 public class UserController {
@@ -25,9 +32,9 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    @RequestMapping(value = "/login1",method = RequestMethod.POST)
     public @ResponseBody
-    CommonResponse Login(HttpServletRequest req , User user){
+    CommonResponse login(HttpServletRequest req , User user){
 
         User record = new User();
         String userId = user.getUserId();

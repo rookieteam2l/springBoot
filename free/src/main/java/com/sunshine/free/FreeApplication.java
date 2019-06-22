@@ -3,6 +3,7 @@ package com.sunshine.free;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @author fq
@@ -10,7 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-@MapperScan("com.hehe.mapper")
+@MapperScan("com.sunshine.free.mapper")
+@ComponentScan(basePackages = {"com.sunshine.free.controller"})
 public class FreeApplication {
 
     public static void main(String[] args) {

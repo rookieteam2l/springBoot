@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>首页 - 金融P2P后台管理系统</title>
+		<title>个人信息 - 金融P2P后台管理系统</title>
 		<meta name="description" content="This is page-header (.page-header &gt; h1)" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
@@ -42,7 +42,6 @@
 							</a>
 
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-				
 								<li>
 									<a href="personal.html">
 										<i class="ace-icon fa fa-user"></i>
@@ -75,7 +74,7 @@
 					<li class="active">
 						<a href="index.html">
 							<i class="menu-icon fa fa-tachometer"></i>
-							<span class="menu-text">菜单列表 </span>
+							<span class="menu-text"> 菜单列表 </span>
 						</a>
 						<b class="arrow"></b>
 					</li>
@@ -229,40 +228,51 @@
 			</div>
 
 			<div class="main-content">
+				
 				<div class="breadcrumbs" id="breadcrumbs">
 					<ul class="breadcrumb">
 						<li>
 							<i class="ace-icon fa fa-home home-icon"></i>
 							<a href="index.html">首页</a>
 						</li>
-					</ul><!-- /.breadcrumb -->
+						<li>
+							<a href="javascript:void(0)">统计管理</a>
+						</li>
+						<li>
+							<a href="statistics_user.html">近一周用户使用信息</a>
+						</li>
+					</ul>
 				</div>
-
+				
 				<div class="page-content">
+				
 					<div class="page-content-area">
 						<div class="row">
 							<div class="col-xs-12">
-								<!-- PAGE CONTENT BEGINS -->
-								<div class="alert alert-block alert-info">
-									<button type="button" class="close" data-dismiss="alert">
-										<i class="ace-icon fa fa-times"></i>
-									</button>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="table-header">
+											近一周用户使用信息管理
+										</div>
+										
+										<!--显示近一周内容-->
+										<div id="container" style="max-width:100%;height:400px"></div>
 
-									<i class="ace-icon fa fa-check green"></i>
-
-									<strong class="green">最新公告：</strong>
-									南航开通华中首条直达美国航线，广州-武汉-旧金山首航，为中部崛起注入创新活力
+										
+									</div>
 								</div>
-								<div class="row center">
-									<img src="assets/avatars/logo_2.png" />
-								</div>
-
 							</div><!-- /.col -->
 						</div><!-- /.row -->
-					</div><!-- /.page-content-area -->
-				</div><!-- /.page-content -->
-			</div><!-- /.main-content -->
-
+					</div>
+				
+				
+				</div>
+			</div>
+			
+			
+			
+			
+			
 			<div class="footer">
 				<div class="footer-inner">
 					<div class="footer-content">
@@ -289,6 +299,60 @@
 		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
-
+		
+		
+		<script src="js/highcharts.js"></script>
+		<script>
+			Highcharts.chart('container', {
+				title: {
+						text: '近一周用户使用信息情况预览'
+				},
+				
+				yAxis: {
+						title: {
+								text: '使用人数'
+						}
+				},
+				xAxis:{
+					categories:[
+						"2018-07-01",
+						"2018-07-02",
+						"2018-07-03",
+						"2018-07-04",
+						"2018-07-05",
+						"2018-07-06",
+						"2018-07-07"
+					]
+				},
+				legend: {
+						layout: 'vertical',
+						align: 'right',
+						verticalAlign: 'middle'
+				},
+				plotOptions: {
+						series: {
+								label: {
+										connectorAllowed: false
+								}
+						}
+				},
+				credits:{
+					enabled:false
+				},
+				series: [{
+						name: '注册',
+						data: [120, 34, 234, 568, 345, 33, 561]
+				}, {
+						name: '登录',
+						data: [167, 67, 334, 743, 435, 49, 764]
+				},{
+						name: '投资',
+						data: [13, 45, 23, 23, 56, 89, 32]
+				},{
+						name: '贷款',
+						data: [5, 11, 18, 34, 36, 26, 3]
+				}]
+		});
+		</script>
 	</body>
 </html>
