@@ -34,30 +34,29 @@
 
       <div id="middle_2">
         <div class="middle_2">
-
-          <ul class="middle_2_2">
-            <li class="spanaa">项目状态</li>
-            <li class="spanbb">不限</li>
-            <li>投资中</li>
-            <li>收益中</li>
-            <li>已完成</li>
+          <ul class="middle_2_2" id="ProjectStatus">
+            <li style="pointer-events: none;" class="spanaa">项目状态</li>
+            <li class="spanbb" value="0">不限</li>
+            <li value="1">投资中</li>
+            <li value="2">收益中</li>
+            <li value="3">已完成</li>
           </ul>
-          <ul class="middle_2_3">
-            <li class="spanaa">利率范围</li>
+          <ul class="middle_2_3" id="rate">
+            <li style="pointer-events: none;" class="spanaa">利率范围</li>
             <li class="spanbb">不限</li>
-            <li>12%以下</li>
-            <li>12%~18%</li>
-            <li>18%以上</li>
+            <li >12%以下</li>
+            <li >12%~18%</li>
+            <li >18%以上</li>
           </ul>
-          <ul class="middle_2_4">
-            <li class="spanaa">借款期限</li>
-            <li class="spanbb">不限</li>
-            <li>1~3个月</li>
+          <ul class="middle_2_4" id="term">
+            <li style="pointer-events: none;" class="spanaa">借款期限</li>
+            <li class="spanbb" value="0">不限</li>
+            <li value="1">1~3个月</li>
             <li>3~6个月</li>
             <li>6~12个月</li>
           </ul>
-          <ul class="middle_2_5">
-            <li class="spanaa">还款方式</li>
+          <ul class="middle_2_5" id="Repayment">
+            <li style="pointer-events: none;" class="spanaa">还款方式</li>
             <li class="spanbb">不限</li>
             <li>先息后本</li>
             <li>到期还本付息</li>
@@ -510,7 +509,15 @@ export default {
         userId:'',
         username:'',
 
-      }]
+      }],
+      queryDate:[
+        {
+          projectStatus:'',
+          rate:'',
+          term:'',
+          Repayment:'',
+        }
+      ]
     }
   },
 
@@ -530,13 +537,48 @@ export default {
         console.log(error)       //请求失败返回的数据
       })
     },
+
+    init(){
+
+      let projectStatus ='';
+      let rate='';
+      let term='';
+      let repayment='';
+
+      $("#ProjectStatus li").click(function() {
+        $(this).siblings('li').removeClass('spanbb');  // 删除其他兄弟元素的样式
+        $(this).addClass('spanbb');// 添加当前元素的样式
+        projectStatus=this.value;
+        alert(this.value);
+      });
+
+      $("#rate li").click(function() {
+        $(this).siblings('li').removeClass('spanbb');  // 删除其他兄弟元素的样式
+        $(this).addClass('spanbb');                    // 添加当前元素的样式
+        rate=this.value;
+      });
+
+      $("#term li").click(function() {
+        $(this).siblings('li').removeClass('spanbb');  // 删除其他兄弟元素的样式
+        $(this).addClass('spanbb');                    // 添加当前元素的样式
+        term=this.value;
+      });
+
+      $("#Repayment li").click(function() {
+        $(this).siblings('li').removeClass('spanbb');  // 删除其他兄弟元素的样式
+        $(this).addClass('spanbb'); // 添加当前元素的样式
+        repayment = this.value;
+      });
+
+    },
   },
 
   mounted(){
 
    // this.postceshi();
-  }
+    this.init();
 
+  }
   }
 
 
