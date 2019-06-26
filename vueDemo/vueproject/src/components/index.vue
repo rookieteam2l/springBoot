@@ -41,25 +41,25 @@
             <li value="2">收益中</li>
             <li value="3">已完成</li>
           </ul>
-          <ul class="middle_2_3" id="rate">
+          <ul class="middle_2_3" id="rate" >
             <li style="pointer-events: none;" class="spanaa">利率范围</li>
-            <li class="spanbb">不限</li>
-            <li >12%以下</li>
-            <li >12%~18%</li>
-            <li >18%以上</li>
+            <li value="0" class="spanbb">不限</li>
+            <li value="1" >12%以下</li>
+            <li value="2" >12%~18%</li>
+            <li value="3">18%以上</li>
           </ul>
           <ul class="middle_2_4" id="term">
             <li style="pointer-events: none;" class="spanaa">借款期限</li>
             <li class="spanbb" value="0">不限</li>
             <li value="1">1~3个月</li>
-            <li>3~6个月</li>
-            <li>6~12个月</li>
+            <li value="2">3~6个月</li>
+            <li value="3">6~12个月</li>
           </ul>
           <ul class="middle_2_5" id="Repayment">
             <li style="pointer-events: none;" class="spanaa">还款方式</li>
-            <li class="spanbb">不限</li>
-            <li>先息后本</li>
-            <li>到期还本付息</li>
+            <li value="0" class="spanbb">不限</li>
+            <li value="1">先息后本</li>
+            <li value="2">到期还本付息</li>
           </ul>
         </div>
 
@@ -502,7 +502,10 @@ export default {
   name: 'index',
   data () {
     return {
-
+      projectStatus:0,
+      rate:0,
+      term:0,
+      repayment:0,
       userId: '',
       username: '',
       addFrom:[{
@@ -510,73 +513,82 @@ export default {
         username:'',
 
       }],
-      queryDate:[
-        {
-          projectStatus:'',
-          rate:'',
-          term:'',
-          Repayment:'',
-        }
-      ]
+      queryDate:[{
+          projectStatus:0,
+          rate:0,
+          term:0,
+          repayment:0,
+        }],
     }
   },
 
-  methods:{
-    postceshi(){
+  methods: {
+
+    postceshi() {
       this.$axios({
-        method:'post',
-        url:'/api/user/login',
-        data:this.qs.stringify({    //这里是发送给后台的数据
-          userId:'123',
-          username:'zhangsan',
+        method: 'post',
+        url: '/api/user/login1',
+        data: this.qs.stringify({    //这里是发送给后台的数据
+          userId: '123',
+          username: 'zhangsan',
         })
-      }).then((response) =>{          //这里使用了ES6的语法
+      }).then((response) => {          //这里使用了ES6的语法
         console.log(response);
         this.addFrom = response.data.result;//请求成功返回的数据
-      }).catch((error) =>{
+      }).catch((error) => {
         console.log(error)       //请求失败返回的数据
       })
     },
 
-    init(){
-
-      let projectStatus ='';
-      let rate='';
-      let term='';
-      let repayment='';
-
-      $("#ProjectStatus li").click(function() {
+    init() {
+      let projectStatus =0;
+      let rate =0;
+      let term =0;
+      let repayment=0;
+      $("#ProjectStatus li").click(function () {
         $(this).siblings('li').removeClass('spanbb');  // 删除其他兄弟元素的样式
         $(this).addClass('spanbb');// 添加当前元素的样式
         projectStatus=this.value;
-        alert(this.value);
+
+        $.ajax({
+          url: '/api/index/getProject',
+          type: "post",
+          dataType:"JSON",
+          data:{
+            projectStatus:projectStatus,
+            rate:rate,
+            term:term,
+            repayment:repayment
+          },
+          success: function(data){
+
+          },
+        });
       });
 
-      $("#rate li").click(function() {
+      $("#rate li").click(function () {
         $(this).siblings('li').removeClass('spanbb');  // 删除其他兄弟元素的样式
-        $(this).addClass('spanbb');                    // 添加当前元素的样式
-        rate=this.value;
+        $(this).addClass('spanbb'); // 添加当前元素的样式
+        rate = this.value;
       });
 
-      $("#term li").click(function() {
+      $("#term li").click(function () {
         $(this).siblings('li').removeClass('spanbb');  // 删除其他兄弟元素的样式
         $(this).addClass('spanbb');                    // 添加当前元素的样式
         term=this.value;
       });
 
-      $("#Repayment li").click(function() {
+      $("#Repayment li").click(function () {
         $(this).siblings('li').removeClass('spanbb');  // 删除其他兄弟元素的样式
         $(this).addClass('spanbb'); // 添加当前元素的样式
-        repayment = this.value;
+        repayment=this.value;
       });
 
     },
   },
-
   mounted(){
-
    // this.postceshi();
-    this.init();
+    //this.init();
 
   }
   }
