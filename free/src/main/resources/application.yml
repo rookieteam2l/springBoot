@@ -14,7 +14,7 @@ spring:
     mode: HTML5
 #数据源配置
   datasource:
-    url: jdbc:mysql://localhost:3306/p2p?useSSL=false
+    url: jdbc:mysql://localhost:3306/p2p?serverTimezone=GMT
     username: root
     password: 178003026
     driver-class-name: com.mysql.jdbc.Driver

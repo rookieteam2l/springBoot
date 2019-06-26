@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    @Select("select * from t_user where 1=1")
+    @Select("select * from sm_user where 1=1")
     List<User> list();
 
     @Select("select * from t_user where username like #{username}")
