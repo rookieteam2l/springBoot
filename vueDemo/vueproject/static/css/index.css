@@ -311,30 +311,35 @@
 	background: #cfcfcf;
 }
 .middle_bottom{
-	width: 420px;
+	width: 550px;
 	height: 40px;
 	margin: 0 auto;
 	margin-top:65px ;
 	cursor:pointer;
-	
 }
 
 .middle_bottom li{
 	
 	float: left;
-	list-style: none;
-	text-align: center;
-	width: 40px;
-	height: 40px;
-	line-height:40px ;
-	background: #FFFFFF;
-	border-radius:10px ;
-	margin: 0 1px;
+  list-style: none;
+  text-align: center;
+  width: 60px;
+  height: 40px;
+  line-height:40px ;
+  background: #FFFFFF;
+  border-radius:10px ;
+  margin: 0 1px;
 }
-.middle_bottom>div>li:first-child{
+
+/*.middle_bottom>div>li:first-child{
     background: #f7772c;
 	color: #FFFFFF;
-} 
+}*/
+/*.middle_bottom>div>li:nth-child(2){
+  background: #f7772c;
+  color: #FFFFFF;
+}*/
+
 .middle_bottom li:hover{
 	
 	background: #f7772c;

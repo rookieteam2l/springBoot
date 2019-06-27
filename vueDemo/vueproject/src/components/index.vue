@@ -62,118 +62,42 @@
             <li value="2">到期还本付息</li>
           </ul>
         </div>
-
-
-
       </div>
-      <div class="middle_3">
+
+      <div class="middle_3" v-for="project in MdProject" v-bind:key="project.id">
         <div class="middle_3_1 title">
-          <span class="middle_3_1_span">测试2019{{addFrom.username}}</span>
+          <span class="middle_3_1_span">{{project.name}}</span>
           <img src="../../static/img/hot.jpg"/>
         </div>
         <ul class="middle_3_2">
           <li>
             <p>预期年化利率</p>
-            <span class="middle_3_2_span">10.00%</span>
+            <span class="middle_3_2_span">{{project.rate}}%</span>
 
           </li>
           <li>
             <p>投资期限</p>
-            <span>12个月</span>
+            <span>{{project.touziqixian}}个月</span>
           </li>
           <li>
             <p>还款方式</p>
-            <span>到期还本付息</span>
+            <span>{{project.huank}}</span>
           </li>
           <li>
             <p>项目总额</p>
-            <span>10,000.00元</span>
+            <span>{{project.ze}}元</span>
           </li>
-
         </ul>
 
         <div class="box">
-          0%
+          null%
         </div>
 
-        <div class="middle_3_3">
+        <div v-if="project.status == 1" class="middle_3_3_1">
+          已结束
+        </div>
+        <div v-else="project.status == 2" class="middle_3_3">
           <a href="#"  onclick="postceshi()">我要投资</a>
-        </div>
-      </div>
-
-
-
-
-
-
-
-      <div class="middle_3">
-        <div class="middle_3_1 title">
-          <span class="middle_3_1_span">体验标9.5</span>
-          <img src="../../static/img/hot.jpg"/>
-        </div>
-        <ul class="middle_3_2">
-          <li>
-            <p>预期年化利率</p>
-            <span class="middle_3_2_span">9.50%</span>
-
-          </li>
-          <li>
-            <p>投资期限</p>
-            <span>1个月</span>
-          </li>
-          <li>
-            <p>还款方式</p>
-            <span>到期还本付息</span>
-          </li>
-          <li>
-            <p>项目总额</p>
-            <span>0.00元</span>
-          </li>
-
-        </ul>
-
-        <div class="box">
-          null%
-        </div>
-
-        <div class="middle_3_3_1">
-          已结束
-        </div>
-      </div>
-
-      <div class="middle_3">
-        <div class="middle_3_1 title">
-          <span class="middle_3_1_span">体验标9.4</span>
-          <img src="../../static/img/hot.jpg"/>
-        </div>
-        <ul class="middle_3_2">
-          <li>
-            <p>预期年化利率</p>
-            <span class="middle_3_2_span">9.40%</span>
-
-          </li>
-          <li>
-            <p>投资期限</p>
-            <span>1个月</span>
-          </li>
-          <li>
-            <p>还款方式</p>
-            <span>到期还本付息</span>
-          </li>
-          <li>
-            <p>项目总额</p>
-            <span>0.00元</span>
-          </li>
-
-        </ul>
-
-        <div class="box">
-          null%
-        </div>
-
-        <div class="middle_3_3_1">
-          已结束
         </div>
       </div>
 
@@ -247,211 +171,30 @@
         </div>
       </div>
 
-      <div class="middle_3">
-        <div class="middle_3_1 title">
-          <span class="middle_3_1_span">体验标9.1</span>
-          <img src="../../static/img/hot.jpg"/>
-        </div>
-        <ul class="middle_3_2">
-          <li>
-            <p>预期年化利率</p>
-            <span class="middle_3_2_span">9.10%</span>
-
-          </li>
-          <li>
-            <p>投资期限</p>
-            <span>1个月</span>
-          </li>
-          <li>
-            <p>还款方式</p>
-            <span>到期还本付息</span>
-          </li>
-          <li>
-            <p>项目总额</p>
-            <span>0.00元</span>
-          </li>
-
-        </ul>
-
-        <div class="box">
-          null%
-        </div>
-
-        <div class="middle_3_3_1">
-          已结束
-        </div>
-      </div>
-
-      <div class="middle_3">
-        <div class="middle_3_1 title">
-          <span class="middle_3_1_span">体验标3个月</span>
-          <img src="../../static/img/hot.jpg"/>
-        </div>
-        <ul class="middle_3_2">
-          <li>
-            <p>预期年化利率</p>
-            <span class="middle_3_2_span">12.00%</span>
-
-          </li>
-          <li>
-            <p>投资期限</p>
-            <span>3个月</span>
-          </li>
-          <li>
-            <p>还款方式</p>
-            <span>到期还本付息</span>
-          </li>
-          <li>
-            <p>项目总额</p>
-            <span>0.00元</span>
-          </li>
-
-        </ul>
-
-        <div class="box">
-          null%
-        </div>
-
-        <div class="middle_3_3_1">
-          已结束
-        </div>
-      </div>
-
-      <div class="middle_3">
-        <div class="middle_3_1 title">
-          <span class="middle_3_1_span">体验标12个月</span>
-          <img src="../../static/img/hot.jpg"/>
-        </div>
-        <ul class="middle_3_2">
-          <li>
-            <p>预期年化利率</p>
-            <span class="middle_3_2_span">12.00%</span>
-
-          </li>
-          <li>
-            <p>投资期限</p>
-            <span>12个月</span>
-          </li>
-          <li>
-            <p>还款方式</p>
-            <span>到期还本付息</span>
-          </li>
-          <li>
-            <p>项目总额</p>
-            <span>0.00元</span>
-          </li>
-
-        </ul>
-
-        <div class="box">
-          null%
-        </div>
-
-        <div class="middle_3_3">
-          <a href="touzhi.html">我要投资</a>
-        </div>
-      </div>
-
-      <div class="middle_3">
-        <div class="middle_3_1 title">
-          <span class="middle_3_1_span">体验标6个月</span>
-          <img src="../../static/img/hot.jpg"/>
-        </div>
-        <ul class="middle_3_2">
-          <li>
-            <p>预期年化利率</p>
-            <span class="middle_3_2_span">12.00%</span>
-
-          </li>
-          <li>
-            <p>投资期限</p>
-            <span>6个月</span>
-          </li>
-          <li>
-            <p>还款方式</p>
-            <span>到期还本付息</span>
-          </li>
-          <li>
-            <p>项目总额</p>
-            <span>0.00元</span>
-          </li>
-
-        </ul>
-
-        <div class="box">
-          null%
-        </div>
-
-        <div class="middle_3_3_1">
-          已结束
-        </div>
-      </div>
-
-      <div class="middle_3">
-        <div class="middle_3_1 title">
-          <span class="middle_3_1_span">体验标1个月</span>
-          <img src="../../static/img/hot.jpg"/>
-        </div>
-        <ul class="middle_3_2">
-          <li>
-            <p>预期年化利率</p>
-            <span class="middle_3_2_span">12.00%</span>
-
-          </li>
-          <li>
-            <p>投资期限</p>
-            <span>1个月</span>
-          </li>
-          <li>
-            <p>还款方式</p>
-            <span>到期还本付息</span>
-          </li>
-          <li>
-            <p>项目总额</p>
-            <span>0.00元</span>
-          </li>
-
-        </ul>
-
-        <div class="box">
-          null%
-        </div>
-
-        <div class="middle_3_3_1">
-          已结束
-        </div>
-      </div>
-
       <ul class="middle_bottom" id="middle_bottom">
-        <li><</li>
         <div>
-          <li class="active">1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
+
+          <li v-if="cur>1"><a class="middle_bottom_a"  v-on:click="cur--,pageClick()">上一页</a></li>
+
+          <li v-if="cur==1"><a class="banclick">上一页</a></li>
+
+          <li v-for="index in indexs"  v-bind:class="{ 'selected': cur == index}">
+            <a class="middle_bottom_a" v-on:click="btnClick(index)">{{ index }}</a>
+          </li>
+
+          <li v-if="cur!=all"><a class="middle_bottom_a" v-on:click="cur++,pageClick()">下一页</a></li>
+
+          <li v-if="cur == all"><a  class="banclick">下一页</a></li>
         </div>
-
-        <li>></li>
       </ul>
-
-
-
-
-
-
+      <div class="middle_bottom_paging">
+      <span >当前展示 10 条记录，共666条记录</span>
+      </div>
     </div>
 
 
-
-
     <!--底部--><!--底部--><!--底部--><!--底部--><!--底部--><!--底部--><!--底部-->
-
     <div class="bottom">
-
       <div class="bottom_content">
         <ul class="bottom_ul">
           <li>关于我们</li>
@@ -502,6 +245,10 @@ export default {
   name: 'index',
   data () {
     return {
+      all: 10, //总页数
+      cur: 1,//当前页码
+      currentPage:0,
+      isOK:true,
       projectStatus:0,
       rate:0,
       term:0,
@@ -519,11 +266,53 @@ export default {
           term:0,
           repayment:0,
         }],
+      MdProject:[
+        {
+          id:1,
+          name:"测试6",
+          rate:20.00,
+          touziqixian:10,
+          huank:"到期还款1",
+          ze:6666,
+          status:1,
+        },
+        {
+          id:2,
+          name:"测试66",
+          rate:66.00,
+          touziqixian:8,
+          huank:"到期还款2",
+          ze:88888,
+          status:1,
+        },
+        {
+          id:3,
+          name:"测试666",
+          rate:22.00,
+          touziqixian:6,
+          huank:"到期还款3",
+          ze:99999,
+          status:2,
+        },
+      ]
     }
   },
 
+  watch: {
+    cur: function(oldValue , newValue){
+      console.log(arguments);
+    }
+  },
   methods: {
 
+    btnClick: function(data){//页码点击事件
+      if(data != this.cur){
+        this.cur = data
+      }
+    },
+    pageClick: function(){
+      console.log('现在在'+this.cur+'页');
+    },
     postceshi() {
       this.$axios({
         method: 'post',
@@ -586,10 +375,60 @@ export default {
 
     },
   },
+
+  computed: {
+    indexs: function(){
+      // 定义开始的数字
+      var left = 1;
+      // 定义结束的数字
+      var right = this.all;
+
+      // 存储返回值
+      var ar = [];
+
+      // 前提条件：每次都显示condition条页码
+      // 最好是个单数
+      var condition = 5;
+
+      // 向上取整->就能获取到中间的数字
+      var middle = Math.ceil(condition/2);
+
+      // 要分清情况
+      //1、在最左边或者在middle的前面
+      //2、在中间
+      //3、最右边的情况
+
+      // 当总页数超过condition时，需要判断分页情况
+      if(this.all>= condition){
+        // 中间的时候
+        // 左右都加上（middle-1)
+        if(this.cur > middle && this.cur < this.all-(middle-1)){
+          left = this.cur - (middle-1)
+          right = this.cur + (middle-1)
+        }else{
+          //最左边或者在condition的中间
+          if(this.cur<=middle){
+            left = 1
+            right = condition
+            // 最右边的情况
+            // 结束是总条数，开始是condition减去1
+          }else{
+            right = this.all
+            left = this.all -(condition-1)
+          }
+        }
+      }
+      while (left <= right){
+        ar.push(left)
+        left ++
+      }
+      return ar
+    }
+  },
+
   mounted(){
    // this.postceshi();
     //this.init();
-
   }
   }
 
@@ -598,6 +437,31 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+<style>
+
+
+  .selected{
+    background: #f7772c !important;
+  }
+</style>
 <style scoped>
   @import '../../static/css/index.css';
+
+  .middle_bottom_paging{
+    width: 320px;
+    height: 60px;
+    margin: 0 auto;
+    margin-top:10px ;
+  }
+  .banclick{
+    width: 60px;
+    height: 40px;
+    cursor:not-allowed;
+  }
+
+  .middle_bottom_a{
+    display:block;
+    width: 60px !important;
+    height: 40px !important;
+  }
 </style>
