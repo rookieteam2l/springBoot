@@ -454,6 +454,7 @@ export default {
     margin-top:10px ;
   }
   .banclick{
+    display:block;
     width: 60px;
     height: 40px;
     cursor:not-allowed;
