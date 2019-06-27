@@ -10,6 +10,12 @@ public class User {
     private String username;
     private String password;
     private String mobileNum;
+
+    private String projectStatus;
+    private String rate;
+    private String term;
+    private String repayment;
+
     public String getUserId() {
         return userId;
     }
@@ -42,6 +48,38 @@ public class User {
         this.mobileNum = mobileNum;
     }
 
+    public String getProjectStatus() {
+        return projectStatus;
+    }
+
+    public void setProjectStatus(String projectStatus) {
+        this.projectStatus = projectStatus;
+    }
+
+    public String getRate() {
+        return rate;
+    }
+
+    public void setRate(String rate) {
+        this.rate = rate;
+    }
+
+    public String getTerm() {
+        return term;
+    }
+
+    public void setTerm(String term) {
+        this.term = term;
+    }
+
+    public String getRepayment() {
+        return repayment;
+    }
+
+    public void setRepayment(String repayment) {
+        this.repayment = repayment;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -49,6 +87,10 @@ public class User {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", mobileNum='" + mobileNum + '\'' +
+                ", projectStatus='" + projectStatus + '\'' +
+                ", rate='" + rate + '\'' +
+                ", term='" + term + '\'' +
+                ", repayment='" + repayment + '\'' +
                 '}';
     }
 }

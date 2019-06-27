@@ -84,7 +84,7 @@
         <div class="middle_2_right">
           <div class="middle_2_right_1">
             <p class="p1p">账户余额<span>1898990.00</span>元</p>
-            <p class="p2p">充值</p>
+            <p class="p2p" @click="open" >充值</p>
           </div>
           <p><input type="text" placeholder="50.00元起投" /><span class="yuan">元</span></p>
           <p><input type="password" placeholder="请输入支付密码"/></p>
@@ -282,6 +282,37 @@ export default {
   },
 
   methods: {
+
+    open() {
+      this.$prompt('请输入充值金额', '充值', {
+        confirmButtonText: '充值',
+        cancelButtonText: '取消',
+        inputPattern: /(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/,
+        inputErrorMessage: '请输入数字'
+      }).then(({ value }) => {
+        this.$axios({
+          method: 'post',
+          url: '/api/user/login1',
+          data: this.qs.stringify({    //这里是发送给后台的数据
+            userId: value
+          })
+        }).then((response) => {          //这里使用了ES6的语法
+          console.log(response);
+          //请求成功返回的数据
+        }).catch((error) => {
+          console.log(error)       //请求失败返回的数据
+        })
+        this.$message({
+          type: 'success',
+          message: '你充值了: ' + value +'元'
+        });
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '取消充值'
+        });
+      });
+    },
 
     init() {
       /***************投资填写弹窗*******************/

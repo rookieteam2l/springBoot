@@ -2,11 +2,15 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import 'element-ui/lib/theme-chalk/base.css';
 import router from './router'
 import axios from 'axios'
 import qs from 'qs'
 import $ from 'jquery'
 
+Vue.use(ElementUI);
 Vue.config.productionTip = false;
 Vue.prototype.$axios = axios;    //全局注册，使用方法为:this.$axios
 Vue.prototype.qs = qs           //全局注册，使用方法为:this.qs
