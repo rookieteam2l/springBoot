@@ -1,6 +1,8 @@
 package com.sunshine.free.entity;
 
 
+import java.util.Date;
+
 public class MdProject {
 
   private String id;
@@ -17,19 +19,18 @@ public class MdProject {
   private double biddingMoneyMax;
   private String validTime;
   private String paymentsMode;
-  private long projectStatus;
+  private int projectStatus;
   private String reserve1;
   private String reserve2;
   private String reserve3;
   private String reserve4;
   private String reserve5;
   private String createId;
-  private java.sql.Timestamp createTime;
-  private long deleteStatus;
-  private long enableStatus;
+  private Date createTime;
+  private int deleteStatus;
+  private int enableStatus;
   private String updateId;
-  private java.sql.Timestamp updateTime;
-
+  private Date updateTime;
 
   public String getId() {
     return id;
@@ -39,7 +40,6 @@ public class MdProject {
     this.id = id;
   }
 
-
   public String getName() {
     return name;
   }
@@ -47,7 +47,6 @@ public class MdProject {
   public void setName(String name) {
     this.name = name;
   }
-
 
   public String getUserId() {
     return userId;
@@ -57,7 +56,6 @@ public class MdProject {
     this.userId = userId;
   }
 
-
   public String getUserName() {
     return userName;
   }
@@ -65,7 +63,6 @@ public class MdProject {
   public void setUserName(String userName) {
     this.userName = userName;
   }
-
 
   public String getLoanMode() {
     return loanMode;
@@ -75,7 +72,6 @@ public class MdProject {
     this.loanMode = loanMode;
   }
 
-
   public double getLoanMoney() {
     return loanMoney;
   }
@@ -83,7 +79,6 @@ public class MdProject {
   public void setLoanMoney(double loanMoney) {
     this.loanMoney = loanMoney;
   }
-
 
   public String getLoanRate() {
     return loanRate;
@@ -93,7 +88,6 @@ public class MdProject {
     this.loanRate = loanRate;
   }
 
-
   public String getLoanTerm() {
     return loanTerm;
   }
@@ -101,7 +95,6 @@ public class MdProject {
   public void setLoanTerm(String loanTerm) {
     this.loanTerm = loanTerm;
   }
-
 
   public String getLoanUse() {
     return loanUse;
@@ -111,7 +104,6 @@ public class MdProject {
     this.loanUse = loanUse;
   }
 
-
   public String getBiddingPassword() {
     return biddingPassword;
   }
@@ -119,7 +111,6 @@ public class MdProject {
   public void setBiddingPassword(String biddingPassword) {
     this.biddingPassword = biddingPassword;
   }
-
 
   public double getBiddingMoneyMin() {
     return biddingMoneyMin;
@@ -129,7 +120,6 @@ public class MdProject {
     this.biddingMoneyMin = biddingMoneyMin;
   }
 
-
   public double getBiddingMoneyMax() {
     return biddingMoneyMax;
   }
@@ -137,7 +127,6 @@ public class MdProject {
   public void setBiddingMoneyMax(double biddingMoneyMax) {
     this.biddingMoneyMax = biddingMoneyMax;
   }
-
 
   public String getValidTime() {
     return validTime;
@@ -147,7 +136,6 @@ public class MdProject {
     this.validTime = validTime;
   }
 
-
   public String getPaymentsMode() {
     return paymentsMode;
   }
@@ -156,15 +144,13 @@ public class MdProject {
     this.paymentsMode = paymentsMode;
   }
 
-
-  public long getProjectStatus() {
+  public int getProjectStatus() {
     return projectStatus;
   }
 
-  public void setProjectStatus(long projectStatus) {
+  public void setProjectStatus(int projectStatus) {
     this.projectStatus = projectStatus;
   }
-
 
   public String getReserve1() {
     return reserve1;
@@ -174,7 +160,6 @@ public class MdProject {
     this.reserve1 = reserve1;
   }
 
-
   public String getReserve2() {
     return reserve2;
   }
@@ -182,7 +167,6 @@ public class MdProject {
   public void setReserve2(String reserve2) {
     this.reserve2 = reserve2;
   }
-
 
   public String getReserve3() {
     return reserve3;
@@ -192,7 +176,6 @@ public class MdProject {
     this.reserve3 = reserve3;
   }
 
-
   public String getReserve4() {
     return reserve4;
   }
@@ -200,7 +183,6 @@ public class MdProject {
   public void setReserve4(String reserve4) {
     this.reserve4 = reserve4;
   }
-
 
   public String getReserve5() {
     return reserve5;
@@ -210,7 +192,6 @@ public class MdProject {
     this.reserve5 = reserve5;
   }
 
-
   public String getCreateId() {
     return createId;
   }
@@ -219,33 +200,29 @@ public class MdProject {
     this.createId = createId;
   }
 
-
-  public java.sql.Timestamp getCreateTime() {
+  public Date getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(java.sql.Timestamp createTime) {
+  public void setCreateTime(Date createTime) {
     this.createTime = createTime;
   }
 
-
-  public long getDeleteStatus() {
+  public int getDeleteStatus() {
     return deleteStatus;
   }
 
-  public void setDeleteStatus(long deleteStatus) {
+  public void setDeleteStatus(int deleteStatus) {
     this.deleteStatus = deleteStatus;
   }
 
-
-  public long getEnableStatus() {
+  public int getEnableStatus() {
     return enableStatus;
   }
 
-  public void setEnableStatus(long enableStatus) {
+  public void setEnableStatus(int enableStatus) {
     this.enableStatus = enableStatus;
   }
-
 
   public String getUpdateId() {
     return updateId;
@@ -255,13 +232,11 @@ public class MdProject {
     this.updateId = updateId;
   }
 
-
-  public java.sql.Timestamp getUpdateTime() {
+  public Date getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(java.sql.Timestamp updateTime) {
+  public void setUpdateTime(Date updateTime) {
     this.updateTime = updateTime;
   }
-
 }

@@ -1,30 +1,32 @@
 package com.sunshine.free.entity;
 
 
+import java.util.Date;
+
 public class SmAdmin {
 
   private String id;
   private String userName;
   private String passWord;
   private String name;
-  private long gender;
-  private java.sql.Date birthday;
+  private int gender;
+  private Date birthday;
   private String telePhone;
   private String email;
-  private java.sql.Date hiredate;
+  private Date hiredate;
   private String adress;
-  private java.sql.Timestamp loginTime;
+  private Date loginTime;
   private String reserve1;
-  private long reserve2;
+  private int reserve2;
   private String reserve3;
   private String reserve4;
   private String reserve5;
   private String createId;
-  private java.sql.Timestamp createTime;
-  private long deleteStatus;
-  private long enableStatus;
+  private Date createTime;
+  private int deleteStatus;
+  private int enableStatus;
   private String updateId;
-  private java.sql.Timestamp updateTime;
+  private Date updateTime;
 
 
   public String getId() {
@@ -35,7 +37,6 @@ public class SmAdmin {
     this.id = id;
   }
 
-
   public String getUserName() {
     return userName;
   }
@@ -43,7 +44,6 @@ public class SmAdmin {
   public void setUserName(String userName) {
     this.userName = userName;
   }
-
 
   public String getPassWord() {
     return passWord;
@@ -53,7 +53,6 @@ public class SmAdmin {
     this.passWord = passWord;
   }
 
-
   public String getName() {
     return name;
   }
@@ -62,24 +61,21 @@ public class SmAdmin {
     this.name = name;
   }
 
-
-  public long getGender() {
+  public int getGender() {
     return gender;
   }
 
-  public void setGender(long gender) {
+  public void setGender(int gender) {
     this.gender = gender;
   }
 
-
-  public java.sql.Date getBirthday() {
+  public Date getBirthday() {
     return birthday;
   }
 
-  public void setBirthday(java.sql.Date birthday) {
+  public void setBirthday(Date birthday) {
     this.birthday = birthday;
   }
-
 
   public String getTelePhone() {
     return telePhone;
@@ -89,7 +85,6 @@ public class SmAdmin {
     this.telePhone = telePhone;
   }
 
-
   public String getEmail() {
     return email;
   }
@@ -98,15 +93,13 @@ public class SmAdmin {
     this.email = email;
   }
 
-
-  public java.sql.Date getHiredate() {
+  public Date getHiredate() {
     return hiredate;
   }
 
-  public void setHiredate(java.sql.Date hiredate) {
+  public void setHiredate(Date hiredate) {
     this.hiredate = hiredate;
   }
-
 
   public String getAdress() {
     return adress;
@@ -116,15 +109,13 @@ public class SmAdmin {
     this.adress = adress;
   }
 
-
-  public java.sql.Timestamp getLoginTime() {
+  public Date getLoginTime() {
     return loginTime;
   }
 
-  public void setLoginTime(java.sql.Timestamp loginTime) {
+  public void setLoginTime(Date loginTime) {
     this.loginTime = loginTime;
   }
-
 
   public String getReserve1() {
     return reserve1;
@@ -134,15 +125,13 @@ public class SmAdmin {
     this.reserve1 = reserve1;
   }
 
-
-  public long getReserve2() {
+  public int getReserve2() {
     return reserve2;
   }
 
-  public void setReserve2(long reserve2) {
+  public void setReserve2(int reserve2) {
     this.reserve2 = reserve2;
   }
-
 
   public String getReserve3() {
     return reserve3;
@@ -152,7 +141,6 @@ public class SmAdmin {
     this.reserve3 = reserve3;
   }
 
-
   public String getReserve4() {
     return reserve4;
   }
@@ -160,7 +148,6 @@ public class SmAdmin {
   public void setReserve4(String reserve4) {
     this.reserve4 = reserve4;
   }
-
 
   public String getReserve5() {
     return reserve5;
@@ -170,7 +157,6 @@ public class SmAdmin {
     this.reserve5 = reserve5;
   }
 
-
   public String getCreateId() {
     return createId;
   }
@@ -179,33 +165,29 @@ public class SmAdmin {
     this.createId = createId;
   }
 
-
-  public java.sql.Timestamp getCreateTime() {
+  public Date getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(java.sql.Timestamp createTime) {
+  public void setCreateTime(Date createTime) {
     this.createTime = createTime;
   }
 
-
-  public long getDeleteStatus() {
+  public int getDeleteStatus() {
     return deleteStatus;
   }
 
-  public void setDeleteStatus(long deleteStatus) {
+  public void setDeleteStatus(int deleteStatus) {
     this.deleteStatus = deleteStatus;
   }
 
-
-  public long getEnableStatus() {
+  public int getEnableStatus() {
     return enableStatus;
   }
 
-  public void setEnableStatus(long enableStatus) {
+  public void setEnableStatus(int enableStatus) {
     this.enableStatus = enableStatus;
   }
-
 
   public String getUpdateId() {
     return updateId;
@@ -215,13 +197,11 @@ public class SmAdmin {
     this.updateId = updateId;
   }
 
-
-  public java.sql.Timestamp getUpdateTime() {
+  public Date getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(java.sql.Timestamp updateTime) {
+  public void setUpdateTime(Date updateTime) {
     this.updateTime = updateTime;
   }
-
 }

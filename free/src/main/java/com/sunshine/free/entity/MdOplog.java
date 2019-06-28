@@ -1,6 +1,8 @@
 package com.sunshine.free.entity;
 
 
+import java.util.Date;
+
 public class MdOplog {
 
   private String id;
@@ -13,12 +15,11 @@ public class MdOplog {
   private String reserve4;
   private String reserve5;
   private String createId;
-  private java.sql.Timestamp createTime;
+  private Date createTime;
   private long deleteStatus;
   private long enableStatus;
   private String updateId;
-  private java.sql.Timestamp updateTime;
-
+  private Date updateTime;
 
   public String getId() {
     return id;
@@ -28,7 +29,6 @@ public class MdOplog {
     this.id = id;
   }
 
-
   public String getUserId() {
     return userId;
   }
@@ -36,7 +36,6 @@ public class MdOplog {
   public void setUserId(String userId) {
     this.userId = userId;
   }
-
 
   public String getTradeType() {
     return tradeType;
@@ -46,7 +45,6 @@ public class MdOplog {
     this.tradeType = tradeType;
   }
 
-
   public String getDescription() {
     return description;
   }
@@ -54,7 +52,6 @@ public class MdOplog {
   public void setDescription(String description) {
     this.description = description;
   }
-
 
   public String getReserve1() {
     return reserve1;
@@ -64,7 +61,6 @@ public class MdOplog {
     this.reserve1 = reserve1;
   }
 
-
   public String getReserve2() {
     return reserve2;
   }
@@ -72,7 +68,6 @@ public class MdOplog {
   public void setReserve2(String reserve2) {
     this.reserve2 = reserve2;
   }
-
 
   public String getReserve3() {
     return reserve3;
@@ -82,7 +77,6 @@ public class MdOplog {
     this.reserve3 = reserve3;
   }
 
-
   public String getReserve4() {
     return reserve4;
   }
@@ -90,7 +84,6 @@ public class MdOplog {
   public void setReserve4(String reserve4) {
     this.reserve4 = reserve4;
   }
-
 
   public String getReserve5() {
     return reserve5;
@@ -100,7 +93,6 @@ public class MdOplog {
     this.reserve5 = reserve5;
   }
 
-
   public String getCreateId() {
     return createId;
   }
@@ -109,15 +101,13 @@ public class MdOplog {
     this.createId = createId;
   }
 
-
-  public java.sql.Timestamp getCreateTime() {
+  public Date getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(java.sql.Timestamp createTime) {
+  public void setCreateTime(Date createTime) {
     this.createTime = createTime;
   }
-
 
   public long getDeleteStatus() {
     return deleteStatus;
@@ -127,7 +117,6 @@ public class MdOplog {
     this.deleteStatus = deleteStatus;
   }
 
-
   public long getEnableStatus() {
     return enableStatus;
   }
@@ -135,7 +124,6 @@ public class MdOplog {
   public void setEnableStatus(long enableStatus) {
     this.enableStatus = enableStatus;
   }
-
 
   public String getUpdateId() {
     return updateId;
@@ -145,13 +133,11 @@ public class MdOplog {
     this.updateId = updateId;
   }
 
-
-  public java.sql.Timestamp getUpdateTime() {
+  public Date getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(java.sql.Timestamp updateTime) {
+  public void setUpdateTime(Date updateTime) {
     this.updateTime = updateTime;
   }
-
 }

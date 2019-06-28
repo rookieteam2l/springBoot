@@ -1,6 +1,8 @@
 package com.sunshine.free.entity;
 
 
+import java.util.Date;
+
 public class SmRole {
 
   private String id;
@@ -8,17 +10,16 @@ public class SmRole {
   private String roleName;
   private String description;
   private String reserve1;
-  private long reserve2;
+  private String reserve2;
   private String reserve3;
   private String reserve4;
   private String reserve5;
   private String createId;
-  private java.sql.Timestamp createTime;
-  private long deleteStatus;
-  private long enableStatus;
+  private Date createTime;
+  private int deleteStatus;
+  private int enableStatus;
   private String updateId;
-  private java.sql.Timestamp updateTime;
-
+  private Date updateTime;
 
   public String getId() {
     return id;
@@ -28,7 +29,6 @@ public class SmRole {
     this.id = id;
   }
 
-
   public String getRoleCode() {
     return roleCode;
   }
@@ -36,7 +36,6 @@ public class SmRole {
   public void setRoleCode(String roleCode) {
     this.roleCode = roleCode;
   }
-
 
   public String getRoleName() {
     return roleName;
@@ -46,7 +45,6 @@ public class SmRole {
     this.roleName = roleName;
   }
 
-
   public String getDescription() {
     return description;
   }
@@ -54,7 +52,6 @@ public class SmRole {
   public void setDescription(String description) {
     this.description = description;
   }
-
 
   public String getReserve1() {
     return reserve1;
@@ -64,15 +61,13 @@ public class SmRole {
     this.reserve1 = reserve1;
   }
 
-
-  public long getReserve2() {
+  public String getReserve2() {
     return reserve2;
   }
 
-  public void setReserve2(long reserve2) {
+  public void setReserve2(String reserve2) {
     this.reserve2 = reserve2;
   }
-
 
   public String getReserve3() {
     return reserve3;
@@ -82,7 +77,6 @@ public class SmRole {
     this.reserve3 = reserve3;
   }
 
-
   public String getReserve4() {
     return reserve4;
   }
@@ -90,7 +84,6 @@ public class SmRole {
   public void setReserve4(String reserve4) {
     this.reserve4 = reserve4;
   }
-
 
   public String getReserve5() {
     return reserve5;
@@ -100,7 +93,6 @@ public class SmRole {
     this.reserve5 = reserve5;
   }
 
-
   public String getCreateId() {
     return createId;
   }
@@ -109,33 +101,29 @@ public class SmRole {
     this.createId = createId;
   }
 
-
-  public java.sql.Timestamp getCreateTime() {
+  public Date getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(java.sql.Timestamp createTime) {
+  public void setCreateTime(Date createTime) {
     this.createTime = createTime;
   }
 
-
-  public long getDeleteStatus() {
+  public int getDeleteStatus() {
     return deleteStatus;
   }
 
-  public void setDeleteStatus(long deleteStatus) {
+  public void setDeleteStatus(int deleteStatus) {
     this.deleteStatus = deleteStatus;
   }
 
-
-  public long getEnableStatus() {
+  public int getEnableStatus() {
     return enableStatus;
   }
 
-  public void setEnableStatus(long enableStatus) {
+  public void setEnableStatus(int enableStatus) {
     this.enableStatus = enableStatus;
   }
-
 
   public String getUpdateId() {
     return updateId;
@@ -145,13 +133,11 @@ public class SmRole {
     this.updateId = updateId;
   }
 
-
-  public java.sql.Timestamp getUpdateTime() {
+  public Date getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(java.sql.Timestamp updateTime) {
+  public void setUpdateTime(Date updateTime) {
     this.updateTime = updateTime;
   }
-
 }

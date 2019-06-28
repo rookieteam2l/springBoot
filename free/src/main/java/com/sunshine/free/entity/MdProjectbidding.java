@@ -1,6 +1,8 @@
 package com.sunshine.free.entity;
 
 
+import java.util.Date;
+
 public class MdProjectbidding {
 
   private String id;
@@ -18,11 +20,11 @@ public class MdProjectbidding {
   private String reserve4;
   private String reserve5;
   private String createId;
-  private java.sql.Timestamp createTime;
-  private long deleteStatus;
-  private long enableStatus;
+  private Date createTime;
+  private int deleteStatus;
+  private int enableStatus;
   private String updateId;
-  private java.sql.Timestamp updateTime;
+  private Date updateTime;
 
 
   public String getId() {
@@ -33,7 +35,6 @@ public class MdProjectbidding {
     this.id = id;
   }
 
-
   public String getProjectId() {
     return projectId;
   }
@@ -41,7 +42,6 @@ public class MdProjectbidding {
   public void setProjectId(String projectId) {
     this.projectId = projectId;
   }
-
 
   public String getProjectName() {
     return projectName;
@@ -51,7 +51,6 @@ public class MdProjectbidding {
     this.projectName = projectName;
   }
 
-
   public String getProjectMoney() {
     return projectMoney;
   }
@@ -59,7 +58,6 @@ public class MdProjectbidding {
   public void setProjectMoney(String projectMoney) {
     this.projectMoney = projectMoney;
   }
-
 
   public String getUserId() {
     return userId;
@@ -69,7 +67,6 @@ public class MdProjectbidding {
     this.userId = userId;
   }
 
-
   public String getUserName() {
     return userName;
   }
@@ -77,7 +74,6 @@ public class MdProjectbidding {
   public void setUserName(String userName) {
     this.userName = userName;
   }
-
 
   public double getBiddingMoney() {
     return biddingMoney;
@@ -87,7 +83,6 @@ public class MdProjectbidding {
     this.biddingMoney = biddingMoney;
   }
 
-
   public String getBiddingPassword() {
     return biddingPassword;
   }
@@ -95,7 +90,6 @@ public class MdProjectbidding {
   public void setBiddingPassword(String biddingPassword) {
     this.biddingPassword = biddingPassword;
   }
-
 
   public String getBiddingMode() {
     return biddingMode;
@@ -105,7 +99,6 @@ public class MdProjectbidding {
     this.biddingMode = biddingMode;
   }
 
-
   public String getReserve1() {
     return reserve1;
   }
@@ -113,7 +106,6 @@ public class MdProjectbidding {
   public void setReserve1(String reserve1) {
     this.reserve1 = reserve1;
   }
-
 
   public String getReserve2() {
     return reserve2;
@@ -123,7 +115,6 @@ public class MdProjectbidding {
     this.reserve2 = reserve2;
   }
 
-
   public String getReserve3() {
     return reserve3;
   }
@@ -131,7 +122,6 @@ public class MdProjectbidding {
   public void setReserve3(String reserve3) {
     this.reserve3 = reserve3;
   }
-
 
   public String getReserve4() {
     return reserve4;
@@ -141,7 +131,6 @@ public class MdProjectbidding {
     this.reserve4 = reserve4;
   }
 
-
   public String getReserve5() {
     return reserve5;
   }
@@ -149,7 +138,6 @@ public class MdProjectbidding {
   public void setReserve5(String reserve5) {
     this.reserve5 = reserve5;
   }
-
 
   public String getCreateId() {
     return createId;
@@ -159,33 +147,29 @@ public class MdProjectbidding {
     this.createId = createId;
   }
 
-
-  public java.sql.Timestamp getCreateTime() {
+  public Date getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(java.sql.Timestamp createTime) {
+  public void setCreateTime(Date createTime) {
     this.createTime = createTime;
   }
 
-
-  public long getDeleteStatus() {
+  public int getDeleteStatus() {
     return deleteStatus;
   }
 
-  public void setDeleteStatus(long deleteStatus) {
+  public void setDeleteStatus(int deleteStatus) {
     this.deleteStatus = deleteStatus;
   }
 
-
-  public long getEnableStatus() {
+  public int getEnableStatus() {
     return enableStatus;
   }
 
-  public void setEnableStatus(long enableStatus) {
+  public void setEnableStatus(int enableStatus) {
     this.enableStatus = enableStatus;
   }
-
 
   public String getUpdateId() {
     return updateId;
@@ -195,13 +179,11 @@ public class MdProjectbidding {
     this.updateId = updateId;
   }
 
-
-  public java.sql.Timestamp getUpdateTime() {
+  public Date getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(java.sql.Timestamp updateTime) {
+  public void setUpdateTime(Date updateTime) {
     this.updateTime = updateTime;
   }
-
 }

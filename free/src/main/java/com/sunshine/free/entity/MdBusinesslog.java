@@ -1,6 +1,8 @@
 package com.sunshine.free.entity;
 
 
+import java.util.Date;
+
 public class MdBusinesslog {
 
   private String id;
@@ -14,12 +16,11 @@ public class MdBusinesslog {
   private String reserve4;
   private String reserve5;
   private String createId;
-  private java.sql.Timestamp createTime;
-  private long deleteStatus;
-  private long enableStatus;
+  private Date createTime;
+  private int deleteStatus;
+  private int enableStatus;
   private String updateId;
-  private java.sql.Timestamp updateTime;
-
+  private Date updateTime;
 
   public String getId() {
     return id;
@@ -29,7 +30,6 @@ public class MdBusinesslog {
     this.id = id;
   }
 
-
   public String getUserId() {
     return userId;
   }
@@ -37,7 +37,6 @@ public class MdBusinesslog {
   public void setUserId(String userId) {
     this.userId = userId;
   }
-
 
   public String getTradeType() {
     return tradeType;
@@ -47,7 +46,6 @@ public class MdBusinesslog {
     this.tradeType = tradeType;
   }
 
-
   public String getDescription() {
     return description;
   }
@@ -55,7 +53,6 @@ public class MdBusinesslog {
   public void setDescription(String description) {
     this.description = description;
   }
-
 
   public double getMoney() {
     return money;
@@ -65,7 +62,6 @@ public class MdBusinesslog {
     this.money = money;
   }
 
-
   public String getReserve1() {
     return reserve1;
   }
@@ -73,7 +69,6 @@ public class MdBusinesslog {
   public void setReserve1(String reserve1) {
     this.reserve1 = reserve1;
   }
-
 
   public String getReserve2() {
     return reserve2;
@@ -83,7 +78,6 @@ public class MdBusinesslog {
     this.reserve2 = reserve2;
   }
 
-
   public String getReserve3() {
     return reserve3;
   }
@@ -91,7 +85,6 @@ public class MdBusinesslog {
   public void setReserve3(String reserve3) {
     this.reserve3 = reserve3;
   }
-
 
   public String getReserve4() {
     return reserve4;
@@ -101,7 +94,6 @@ public class MdBusinesslog {
     this.reserve4 = reserve4;
   }
 
-
   public String getReserve5() {
     return reserve5;
   }
@@ -109,7 +101,6 @@ public class MdBusinesslog {
   public void setReserve5(String reserve5) {
     this.reserve5 = reserve5;
   }
-
 
   public String getCreateId() {
     return createId;
@@ -119,33 +110,29 @@ public class MdBusinesslog {
     this.createId = createId;
   }
 
-
-  public java.sql.Timestamp getCreateTime() {
+  public Date getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(java.sql.Timestamp createTime) {
+  public void setCreateTime(Date createTime) {
     this.createTime = createTime;
   }
 
-
-  public long getDeleteStatus() {
+  public int getDeleteStatus() {
     return deleteStatus;
   }
 
-  public void setDeleteStatus(long deleteStatus) {
+  public void setDeleteStatus(int deleteStatus) {
     this.deleteStatus = deleteStatus;
   }
 
-
-  public long getEnableStatus() {
+  public int getEnableStatus() {
     return enableStatus;
   }
 
-  public void setEnableStatus(long enableStatus) {
+  public void setEnableStatus(int enableStatus) {
     this.enableStatus = enableStatus;
   }
-
 
   public String getUpdateId() {
     return updateId;
@@ -155,13 +142,11 @@ public class MdBusinesslog {
     this.updateId = updateId;
   }
 
-
-  public java.sql.Timestamp getUpdateTime() {
+  public Date getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(java.sql.Timestamp updateTime) {
+  public void setUpdateTime(Date updateTime) {
     this.updateTime = updateTime;
   }
-
 }

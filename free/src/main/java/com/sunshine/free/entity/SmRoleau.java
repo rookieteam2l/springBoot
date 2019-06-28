@@ -1,18 +1,19 @@
 package com.sunshine.free.entity;
 
 
+import java.util.Date;
+
 public class SmRoleau {
 
   private String id;
   private String roleId;
   private String auId;
   private String createId;
-  private java.sql.Timestamp createTime;
-  private long deleteStatus;
-  private long enableStatus;
+  private Date createTime;
+  private int deleteStatus;
+  private int enableStatus;
   private String updateId;
-  private java.sql.Timestamp updateTime;
-
+  private Date updateTime;
 
   public String getId() {
     return id;
@@ -22,7 +23,6 @@ public class SmRoleau {
     this.id = id;
   }
 
-
   public String getRoleId() {
     return roleId;
   }
@@ -30,7 +30,6 @@ public class SmRoleau {
   public void setRoleId(String roleId) {
     this.roleId = roleId;
   }
-
 
   public String getAuId() {
     return auId;
@@ -40,7 +39,6 @@ public class SmRoleau {
     this.auId = auId;
   }
 
-
   public String getCreateId() {
     return createId;
   }
@@ -49,33 +47,29 @@ public class SmRoleau {
     this.createId = createId;
   }
 
-
-  public java.sql.Timestamp getCreateTime() {
+  public Date getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(java.sql.Timestamp createTime) {
+  public void setCreateTime(Date createTime) {
     this.createTime = createTime;
   }
 
-
-  public long getDeleteStatus() {
+  public int getDeleteStatus() {
     return deleteStatus;
   }
 
-  public void setDeleteStatus(long deleteStatus) {
+  public void setDeleteStatus(int deleteStatus) {
     this.deleteStatus = deleteStatus;
   }
 
-
-  public long getEnableStatus() {
+  public int getEnableStatus() {
     return enableStatus;
   }
 
-  public void setEnableStatus(long enableStatus) {
+  public void setEnableStatus(int enableStatus) {
     this.enableStatus = enableStatus;
   }
-
 
   public String getUpdateId() {
     return updateId;
@@ -85,13 +79,11 @@ public class SmRoleau {
     this.updateId = updateId;
   }
 
-
-  public java.sql.Timestamp getUpdateTime() {
+  public Date getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(java.sql.Timestamp updateTime) {
+  public void setUpdateTime(Date updateTime) {
     this.updateTime = updateTime;
   }
-
 }

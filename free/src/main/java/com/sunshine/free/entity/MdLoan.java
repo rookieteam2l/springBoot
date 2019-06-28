@@ -1,6 +1,8 @@
 package com.sunshine.free.entity;
 
 
+import java.util.Date;
+
 public class MdLoan {
 
   private String id;
@@ -8,8 +10,8 @@ public class MdLoan {
   private String tellphone;
   private String address;
   private double loanMoney;
-  private long loanTerm;
-  private java.sql.Timestamp loanlTime;
+  private int loanTerm;
+  private Date loanTime;
   private String loanMode;
   private String loanUse;
   private String approvalStatus;
@@ -20,12 +22,11 @@ public class MdLoan {
   private String reserve4;
   private String reserve5;
   private String createId;
-  private java.sql.Timestamp createTime;
-  private long deleteStatus;
-  private long enableStatus;
+  private Date createTime;
+  private int deleteStatus;
+  private int enableStatus;
   private String updateId;
-  private java.sql.Timestamp updateTime;
-
+  private Date updateTime;
 
   public String getId() {
     return id;
@@ -35,7 +36,6 @@ public class MdLoan {
     this.id = id;
   }
 
-
   public String getUserId() {
     return userId;
   }
@@ -43,7 +43,6 @@ public class MdLoan {
   public void setUserId(String userId) {
     this.userId = userId;
   }
-
 
   public String getTellphone() {
     return tellphone;
@@ -53,7 +52,6 @@ public class MdLoan {
     this.tellphone = tellphone;
   }
 
-
   public String getAddress() {
     return address;
   }
@@ -61,7 +59,6 @@ public class MdLoan {
   public void setAddress(String address) {
     this.address = address;
   }
-
 
   public double getLoanMoney() {
     return loanMoney;
@@ -71,24 +68,21 @@ public class MdLoan {
     this.loanMoney = loanMoney;
   }
 
-
-  public long getLoanTerm() {
+  public int getLoanTerm() {
     return loanTerm;
   }
 
-  public void setLoanTerm(long loanTerm) {
+  public void setLoanTerm(int loanTerm) {
     this.loanTerm = loanTerm;
   }
 
-
-  public java.sql.Timestamp getLoanlTime() {
-    return loanlTime;
+  public Date getLoanTime() {
+    return loanTime;
   }
 
-  public void setLoanlTime(java.sql.Timestamp loanlTime) {
-    this.loanlTime = loanlTime;
+  public void setLoanTime(Date loanTime) {
+    this.loanTime = loanTime;
   }
-
 
   public String getLoanMode() {
     return loanMode;
@@ -98,7 +92,6 @@ public class MdLoan {
     this.loanMode = loanMode;
   }
 
-
   public String getLoanUse() {
     return loanUse;
   }
@@ -106,7 +99,6 @@ public class MdLoan {
   public void setLoanUse(String loanUse) {
     this.loanUse = loanUse;
   }
-
 
   public String getApprovalStatus() {
     return approvalStatus;
@@ -116,7 +108,6 @@ public class MdLoan {
     this.approvalStatus = approvalStatus;
   }
 
-
   public String getLoanStatus() {
     return loanStatus;
   }
@@ -124,7 +115,6 @@ public class MdLoan {
   public void setLoanStatus(String loanStatus) {
     this.loanStatus = loanStatus;
   }
-
 
   public String getReserve1() {
     return reserve1;
@@ -134,7 +124,6 @@ public class MdLoan {
     this.reserve1 = reserve1;
   }
 
-
   public String getReserve2() {
     return reserve2;
   }
@@ -142,7 +131,6 @@ public class MdLoan {
   public void setReserve2(String reserve2) {
     this.reserve2 = reserve2;
   }
-
 
   public String getReserve3() {
     return reserve3;
@@ -152,7 +140,6 @@ public class MdLoan {
     this.reserve3 = reserve3;
   }
 
-
   public String getReserve4() {
     return reserve4;
   }
@@ -160,7 +147,6 @@ public class MdLoan {
   public void setReserve4(String reserve4) {
     this.reserve4 = reserve4;
   }
-
 
   public String getReserve5() {
     return reserve5;
@@ -170,7 +156,6 @@ public class MdLoan {
     this.reserve5 = reserve5;
   }
 
-
   public String getCreateId() {
     return createId;
   }
@@ -179,33 +164,29 @@ public class MdLoan {
     this.createId = createId;
   }
 
-
-  public java.sql.Timestamp getCreateTime() {
+  public Date getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(java.sql.Timestamp createTime) {
+  public void setCreateTime(Date createTime) {
     this.createTime = createTime;
   }
 
-
-  public long getDeleteStatus() {
+  public int getDeleteStatus() {
     return deleteStatus;
   }
 
-  public void setDeleteStatus(long deleteStatus) {
+  public void setDeleteStatus(int deleteStatus) {
     this.deleteStatus = deleteStatus;
   }
 
-
-  public long getEnableStatus() {
+  public int getEnableStatus() {
     return enableStatus;
   }
 
-  public void setEnableStatus(long enableStatus) {
+  public void setEnableStatus(int enableStatus) {
     this.enableStatus = enableStatus;
   }
-
 
   public String getUpdateId() {
     return updateId;
@@ -215,13 +196,11 @@ public class MdLoan {
     this.updateId = updateId;
   }
 
-
-  public java.sql.Timestamp getUpdateTime() {
+  public Date getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(java.sql.Timestamp updateTime) {
+  public void setUpdateTime(Date updateTime) {
     this.updateTime = updateTime;
   }
-
 }
