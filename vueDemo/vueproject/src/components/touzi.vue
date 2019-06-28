@@ -36,7 +36,7 @@
         </div>
         <div class="middle_1_2">
           <span class="title">测试2017051701</span>
-          <span class="more">更多项目></span>
+          <router-link to="/"><span class="more">更多项目></span></router-link>
         </div>
       </div>
 
@@ -75,7 +75,7 @@
 
             <span>进度：0.00%</span>
             <p class="s12">
-              可投时间：<span>6</span>天<span>23</span>时<span>53</span>分<span>16</span>秒
+              可投时间：<span>{{this.dayDiff}}</span>天<span>{{this.hours}}</span>时<span>{{this.minutes}}</span>分<span>{{this.seconds}}</span>秒
             </p>
           </div>
 
@@ -86,7 +86,7 @@
             <p class="p1p">账户余额<span>1898990.00</span>元</p>
             <p class="p2p" @click="open" >充值</p>
           </div>
-          <p><input type="text" placeholder="50.00元起投" /><span class="yuan">元</span></p>
+          <p><input type="text" placeholder="50.00元起投" v-model="money"/><span class="yuan">元</span></p>
           <p><input type="password" placeholder="请输入支付密码"/></p>
           <div class="mstz">
             马上投资
@@ -104,8 +104,8 @@
           <li>加入记录</li>
         </ul>
         <div class="tz_tab_content">
-          <div class="jianjie">简介</div>
-          <div class="xiangqing">
+          <div class="jianjie"  style="height:200px;overflow-y:auto">简介</div>
+          <div class="xiangqing"  style="height:200px;overflow-y:auto">
             <p>
               <span class="title">计划名称</span>
               <span class="main">测试2017051701</span>
@@ -148,8 +148,8 @@
             </p>
 
           </div>
-          <div class="pilu">披露</div>
-          <div class="jilu">
+          <div class="pilu"  style="height:200px;overflow-y:auto">披露</div>
+          <div class="jilu"  style="height:200px;overflow-y:auto">
 
             <table>
               <thead>
@@ -176,9 +176,6 @@
           </div>
         </div>
       </div>
-
-
-
 
     </div>
 
@@ -217,28 +214,16 @@
           <div class="bottom_text3">
             <p class="s1">123456789@qq.com</p>
             <p class="s2">09:30 - 18:00</p>
-
           </div>
         </div>
-
       </div>
 
       <div class="bottom_content2">
-
         <p class="p11"><img src="../../static/img/cxwz.jpg"/></p>
-
-
         <p class="p22">Copyright©2019  版权所有 </p>
-
       </div>
 
-
-
-
-
-
     </div>
-
 
     <!--  投资确认框 -->
 
@@ -256,11 +241,9 @@
         </ul>
       </div>
       <div class="content_right">
-
         <div class="close"></div>
-
-        <p class="congzhi">您的可用金额：<span>1898980.00</span>元<a href="###">[我要充值]</a></p>
-        <p><label for="">投标金额：</label><input type="text"><span class="danwei">元</span></p>
+        <p class="congzhi">您的可用金额：<span>1898980.00</span>元<a style="cursor:pointer;" @click="open">[我要充值]</a></p>
+        <p><label for="">投标金额：</label><input type="text" v-model="money"><span class="danwei">元</span></p>
         <p><label for="">投标密码：</label><input type="password"></p>
         <p><label for="">支付密码：</label><input type="password"><a href="###" class="zfpw">忘记支付密码？</a></p>
         <p><label for="">验证码：</label><input type="text"><span class="yzm">验证码图片</span></p>
@@ -277,11 +260,35 @@ export default {
   name: 'touzi',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      money:'',
+      proDate:'2019-07-05 13:10:01',
+      dayDiff:0, //天
+      hours:0, // 时
+      minutes:0, //分
+      seconds:0, //秒
+      timer:null,
     }
   },
 
   methods: {
+
+    countDown(){
+      let dateEnd = new Date(this.proDate.replace(/-/g, "/"));//将-转化为/，使用new Date
+      let dateBegin = new Date();//获取当前时间
+      let dateDiff = dateEnd.getTime() - dateBegin.getTime();//时间差的毫秒数
+      this.dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));//计算出相差天数
+      let leave1=dateDiff%(24*3600*1000)    //计算天数后剩余的毫秒数
+      this.hours=Math.floor(leave1/(3600*1000))//计算出小时数
+      //计算相差分钟数
+      let leave2=leave1%(3600*1000)    //计算小时数后剩余的毫秒数
+      this.minutes=Math.floor(leave2/(60*1000))//计算相差分钟数
+      //计算相差秒数
+      let leave3=leave2%(60*1000)      //计算分钟数后剩余的毫秒数
+      this.seconds=Math.round(leave3/1000)
+      console.log(" 相差 "+this.dayDiff+"天 "+this.hours+"小时 "+this.minutes+" 分钟"+this.seconds+" 秒")
+      console.log(dateDiff+"时间差的毫秒数",this.dayDiff+"计算出相差天数",leave1+"计算天数后剩余的毫秒数"
+        ,this.hours+"计算出小时数",this.minutes+"计算相差分钟数",this.seconds+"计算相差秒数");
+    },
 
     open() {
       this.$prompt('请输入充值金额', '充值', {
@@ -321,34 +328,22 @@ export default {
       var close_btn = $('.dialog .content_right .close');
 
       mstz_btn.click(function () {
-
         dialog.show();
       });
 
       close_btn.click(function () {
-
         dialog.hide();
       });
 
-
       /***************TAB切换栏*******************/
-
-
       var tz_tab_li = $('.tz_tab ul li');
       var tz_tab_content = $('.tz_tab .tz_tab_content>div');
-
       tz_tab_li.eq(0).attr('class', 'active');
       tz_tab_content.eq(0).show();
-
-
       $.each(tz_tab_li, function (index, value) {
-
         $(this).click(function () {
-
-
           $(this).addClass('active').siblings().removeClass('active');
           tz_tab_content.eq(index).show().siblings().hide();
-
         });
 
       });
@@ -357,6 +352,15 @@ export default {
 
   mounted() {
     this.init();
+    this.timer = setInterval(() =>{
+      this.countDown();
+      // 某些定时器操作
+    }, 1000);
+    // 通过$once来监听定时器
+    // 在beforeDestroy钩子触发时清除定时器
+    this.$once('hook:beforeDestroy', () => {
+      clearInterval(this.timer);
+    })
   }
 }
 </script>

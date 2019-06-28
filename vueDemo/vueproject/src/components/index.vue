@@ -88,86 +88,17 @@
             <span>{{project.ze}}元</span>
           </li>
         </ul>
-
-        <div class="box">
-          null%
+        <div class="middle_3_box1" v-if="project.percentage >= 100">
+          <el-progress type="circle"  :percentage="project.percentage" status="success" :width="100"></el-progress>
         </div>
-
+        <div class="middle_3_box1" v-else="project.percentage < 100">
+          <el-progress type="circle"  :percentage="project.percentage"  :width="100"></el-progress>
+        </div>
         <div v-if="project.status == 1" class="middle_3_3_1">
           已结束
         </div>
         <div v-else="project.status == 2" class="middle_3_3">
           <a href="#"  onclick="postceshi()">我要投资</a>
-        </div>
-      </div>
-
-      <div class="middle_3">
-        <div class="middle_3_1 title">
-          <span class="middle_3_1_span">体验标9.3</span>
-          <img src="../../static/img/hot.jpg"/>
-        </div>
-        <ul class="middle_3_2">
-          <li>
-            <p>预期年化利率</p>
-            <span class="middle_3_2_span">9.30%</span>
-
-          </li>
-          <li>
-            <p>投资期限</p>
-            <span>1个月</span>
-          </li>
-          <li>
-            <p>还款方式</p>
-            <span>到期还本付息</span>
-          </li>
-          <li>
-            <p>项目总额</p>
-            <span>0.00元</span>
-          </li>
-
-        </ul>
-
-        <div class="box">
-          null%
-        </div>
-
-        <div class="middle_3_3_1">
-          已结束
-        </div>
-      </div>
-
-      <div class="middle_3">
-        <div class="middle_3_1 title">
-          <span class="middle_3_1_span">体验标9.2</span>
-          <img src="../../static/img/hot.jpg"/>
-        </div>
-        <ul class="middle_3_2">
-          <li>
-            <p>预期年化利率</p>
-            <span class="middle_3_2_span">9.20%</span>
-
-          </li>
-          <li>
-            <p>投资期限</p>
-            <span>1个月</span>
-          </li>
-          <li>
-            <p>还款方式</p>
-            <span>到期还本付息</span>
-          </li>
-          <li>
-            <p>项目总额</p>
-            <span>0.00元</span>
-          </li>
-
-        </ul>
-
-        <div class="box">
-          null%
-        </div>
-
-        <div class="middle_3_3_1">
-          已结束
         </div>
       </div>
 
@@ -275,6 +206,7 @@ export default {
           huank:"到期还款1",
           ze:6666,
           status:1,
+          percentage:100,
         },
         {
           id:2,
@@ -284,6 +216,7 @@ export default {
           huank:"到期还款2",
           ze:88888,
           status:1,
+          percentage:100,
         },
         {
           id:3,
@@ -293,6 +226,7 @@ export default {
           huank:"到期还款3",
           ze:99999,
           status:2,
+          percentage:60,
         },
       ]
     }
@@ -305,14 +239,21 @@ export default {
   },
   methods: {
 
+    search: function(){
+      alert(this.cur+""+this.all);
+    },
+
     btnClick: function(data){//页码点击事件
       if(data != this.cur){
         this.cur = data
       }
+      this.search();
     },
     pageClick: function(){
       console.log('现在在'+this.cur+'页');
+      this.search();
     },
+
     postceshi() {
       this.$axios({
         method: 'post',
@@ -359,18 +300,60 @@ export default {
         $(this).siblings('li').removeClass('spanbb');  // 删除其他兄弟元素的样式
         $(this).addClass('spanbb'); // 添加当前元素的样式
         rate = this.value;
+        $.ajax({
+          url: '/api/index/getProject',
+          type: "post",
+          dataType:"JSON",
+          data:{
+            projectStatus:projectStatus,
+            rate:rate,
+            term:term,
+            repayment:repayment
+          },
+          success: function(data){
+
+          },
+        });
       });
 
       $("#term li").click(function () {
         $(this).siblings('li').removeClass('spanbb');  // 删除其他兄弟元素的样式
         $(this).addClass('spanbb');                    // 添加当前元素的样式
         term=this.value;
+        $.ajax({
+          url: '/api/index/getProject',
+          type: "post",
+          dataType:"JSON",
+          data:{
+            projectStatus:projectStatus,
+            rate:rate,
+            term:term,
+            repayment:repayment
+          },
+          success: function(data){
+
+          },
+        });
       });
 
       $("#Repayment li").click(function () {
         $(this).siblings('li').removeClass('spanbb');  // 删除其他兄弟元素的样式
         $(this).addClass('spanbb'); // 添加当前元素的样式
         repayment=this.value;
+        $.ajax({
+          url: '/api/index/getProject',
+          type: "post",
+          dataType:"JSON",
+          data:{
+            projectStatus:projectStatus,
+            rate:rate,
+            term:term,
+            repayment:repayment
+          },
+          success: function(data){
+
+          },
+        });
       });
 
     },
@@ -428,7 +411,8 @@ export default {
 
   mounted(){
    // this.postceshi();
-    //this.init();
+   // this.init();
+
   }
   }
 
@@ -464,5 +448,12 @@ export default {
     display:block;
     width: 60px !important;
     height: 40px !important;
+  }
+  .middle_3_box1{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+     top: 50px;
+    left: 780px;
   }
 </style>

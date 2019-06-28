@@ -91,7 +91,7 @@
             <p>累计收益:¥888865.00</p>
 
             <div class="cc">
-              <div class="cz">
+              <div @click="open" class="cz">
                 充值
               </div>
               <p>昨日收益 <span>3.00</span></p>
@@ -202,20 +202,12 @@
             <div class="right_zx">
               <div class="zxx">
 
-
                 <span id="s1"><</span>
                 <div>1</div>
                 <span id="s2">></span>
-
               </div>
             </div>
-
-
           </div>
-
-
-
-
 
         </div>
         <div class="div_box">
@@ -230,14 +222,6 @@
         <div class="div_box">
           5
         </div>
-
-
-
-
-
-
-
-
       </div>
     </div>
 
@@ -312,40 +296,55 @@ export default {
     }
   },
   methods:{
+
+    open() {
+      this.$prompt('请输入充值金额', '充值', {
+        confirmButtonText: '充值',
+        cancelButtonText: '取消',
+        inputPattern: /(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/,
+        inputErrorMessage: '请输入数字'
+      }).then(({ value }) => {
+        this.$axios({
+          method: 'post',
+          url: '/api/user/login1',
+          data: this.qs.stringify({    //这里是发送给后台的数据
+            userId: value
+          })
+        }).then((response) => {          //这里使用了ES6的语法
+          console.log(response);
+          //请求成功返回的数据
+        }).catch((error) => {
+          console.log(error)       //请求失败返回的数据
+        })
+        this.$message({
+          type: 'success',
+          message: '你充值了: ' + value +'元'
+        });
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '取消充值'
+        });
+      });
+    },
+
     init(){
-
       var li = $('ul.list_mi li a');
-
       li.eq(0).css('color','#f35d08').css('background','#fff');
       $.each(li,function(index,value){
-
         $(this).hover(function(){
-
           $(this).css('color','#f35d08').css('background','#fff');
-
           li.eq(0).css('color','#f35d08').css('background','#fff');
-
         },function(){
-
           $(this).css('color','#fff').css('background','#f7772c');
-
           li.eq(0).css('color','#f35d08').css('background','#fff');
-
         });
-
-
-
       });
 
-
-
-
       var img = document.getElementById('img_list');
-
       var img1= img.children;
 
       for (var i=0;i<img1.length;i++) {
-
         img1[i].setAttribute('index',i);
         img1[0].onclick=function(){
           this.style.background='url(img/shouji.jpg) no-repeat';
@@ -362,10 +361,7 @@ export default {
           img1[0].style.background='url(img/shou.jpg) no-repeat';
           img1[1].style.background='url(img/youxiang.jpg) no-repeat';
         }
-
-
       }
-
 
       $("[type=file]").change(function(){
         var tag = $(this) ;
@@ -376,9 +372,7 @@ export default {
         fr.onload = function(){
           tag.prev().find("img").attr('src' ,fr.result) ;
         }
-
       });
-
     }
   },
 

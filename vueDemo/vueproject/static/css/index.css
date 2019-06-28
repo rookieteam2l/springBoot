@@ -84,8 +84,10 @@
 .middle{
 	width:100%;
 	min-width: 1100px;
-	height: 2600px;
-	background:#edf1f4;
+	/*height: 2600px;*/
+  _height:800px;
+  min-height:800px;
+  background:#edf1f4;
 	color: #676d7d;
 }
 .middle .middle_1{
