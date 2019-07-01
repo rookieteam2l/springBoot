@@ -30,4 +30,10 @@ public class BackLoginController {
 
         return "index";
     }
+
+    @RequestMapping(value = "role")
+    public String role(){
+
+        return "role";
+    }
 }

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @date 2019-06-26
  */
 
-@Controller(value="/index")
+@Controller
 public class FrontIndexController {
 
     @RequestMapping(value = "/getProject", method =RequestMethod.POST)
