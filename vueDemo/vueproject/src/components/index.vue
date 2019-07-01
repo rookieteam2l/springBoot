@@ -98,7 +98,7 @@
           已结束
         </div>
         <div v-else="project.status == 2" class="middle_3_3">
-          <a href="#"  onclick="postceshi()">我要投资</a>
+          <a href="#"  @click="info(project.id)">我要投资</a>
         </div>
       </div>
 
@@ -254,6 +254,17 @@ export default {
       this.search();
     },
 
+    info(id){
+      this.$router.push({
+        path:"/touzi",
+/*        params:{
+          id:id,
+        }*/
+        query:{
+          id:id,
+        }
+      });
+    },
     postceshi() {
       this.$axios({
         method: 'post',

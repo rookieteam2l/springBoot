@@ -72,8 +72,8 @@
 
           <div class="ww141">
             <div class="ww141_1"></div>
-
-            <span>进度：0.00%</span>
+            <el-progress :text-inside="true" :stroke-width="14" :percentage="90"></el-progress>
+            <span>进度：90.00%</span>
             <p class="s12">
               可投时间：<span>{{this.dayDiff}}</span>天<span>{{this.hours}}</span>时<span>{{this.minutes}}</span>分<span>{{this.seconds}}</span>秒
             </p>
@@ -243,10 +243,10 @@
       <div class="content_right">
         <div class="close"></div>
         <p class="congzhi">您的可用金额：<span>1898980.00</span>元<a style="cursor:pointer;" @click="open">[我要充值]</a></p>
-        <p><label for="">投标金额：</label><input type="text" v-model="money"><span class="danwei">元</span></p>
-        <p><label for="">投标密码：</label><input type="password"></p>
-        <p><label for="">支付密码：</label><input type="password"><a href="###" class="zfpw">忘记支付密码？</a></p>
-        <p><label for="">验证码：</label><input type="text"><span class="yzm">验证码图片</span></p>
+        <p><label for="BiddingMoney">投标金额：</label><input id="BiddingMoney" type="text" v-model="money"><span class="danwei">元</span></p>
+        <p><label for="BiddingPassword">投标密码：</label><input id="BiddingPassword" type="password"></p>
+        <p><label for="payment">支付密码：</label><input id="payment" type="password"><a href="###" class="zfpw">忘记支付密码？</a></p>
+        <p><label for="yzm">验证码：</label><input id="yzm" type="text"><span class="yzm">验证码图片</span></p>
         <p class="tb_ok"><a href="myAccount.html">确认投标</a></p>
         <p style="margin:10px 0 0 0">注意：点击按钮表示您将确认投标金额并同意支付</p>
       </div>
@@ -347,6 +347,10 @@ export default {
         });
 
       });
+    },
+
+    getParams(){
+      let id= this.$route.query.id;
     }
   },
 
@@ -361,6 +365,7 @@ export default {
     this.$once('hook:beforeDestroy', () => {
       clearInterval(this.timer);
     })
+    this.getParams();
   }
 }
 </script>
