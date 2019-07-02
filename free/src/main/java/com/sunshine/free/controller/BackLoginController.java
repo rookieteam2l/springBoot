@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- *
+ * @Description 登陆
  * @author Free
  * @date 2019-06-22
  */
@@ -29,11 +29,5 @@ public class BackLoginController {
     public String loginOn(){
 
         return "index";
-    }
-
-    @RequestMapping(value = "role")
-    public String role(){
-
-        return "role";
     }
 }

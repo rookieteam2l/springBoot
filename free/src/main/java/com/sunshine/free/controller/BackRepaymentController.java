@@ -4,20 +4,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * @Description 后台用户信息
+ * @Description 已还款信息
  * @author Free
  * @date 2019-07-01
  */
 
 @Controller
-@RequestMapping(value = "/user/employee")
-public class BackEmployeeController {
+@RequestMapping(value = "/repayment/repayment")
+public class BackRepaymentController {
 
 
-    @RequestMapping("/getEmployeeInfo")
-    public String getEmployeeInfo(){
+    @RequestMapping("/getRepayment")
+    public String getRepayment(){
 
-        return "employee";
+        return "repayment";
     }
 
 }
