@@ -22,7 +22,7 @@
 			<div class="navbar-header pull-left">
 				<a href="index.html" class="navbar-brand">
 					<small>
-						<img src="/assets/avatars/logo.png" alt="" />
+						<img src="/static/assets/avatars/logo.png" alt="" />
 					</small>
 				</a>
 			</div>
@@ -32,7 +32,7 @@
 
 					<li class="light-blue">
 						<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-							<img class="nav-user-photo" src="/assets/avatars/user.jpg" alt="Jason's Photo" />
+							<img class="nav-user-photo" src="/static/assets/avatars/user.jpg" alt="Jason's Photo" />
 							<span class="user-info">
 									欢迎您<br />
 									张三丰
@@ -282,7 +282,7 @@
 													<tr>
 														<th class="center">
 															<label class="position-relative">
-																<input type="checkbox" class="ace" />
+																<input type="checkbox" class="ace" id="selectAll"/>
 																<span class="lbl"></span>
 															</label>
 														</th>
@@ -301,7 +301,7 @@
 													<tr>
 														<td class="center">
 															<label class="position-relative">
-																<input type="checkbox" class="ace" />
+																<input type="checkbox" class="ace" name="ids" />
 																<span class="lbl"></span>
 															</label>
 														</td>
@@ -369,7 +369,7 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120">
-							 金融P2P后台 &copy; 2018
+							 金融P2P后台 &copy; 2019
 						</span>
 					</div>
 				</div>
@@ -391,6 +391,16 @@
 		<script src="/static/assets/js/jquery.ui.touch-punch.min.js"></script>
 		<script src="/static/assets/js/ace-elements.min.js"></script>
 		<script src="/static/assets/js/ace.min.js"></script>
+
+		<script th:inline="javascript">
+			// 复选框的全选和全不选
+			$(function() {
+				$("#selectAll").click(function() {
+					$(":checkbox[name='ids']").prop("checked", this.checked); // this指代的你当前选择的这个元素的JS对象
+				});
+
+			});
+		</script>
 
 	</body>
 </html>
