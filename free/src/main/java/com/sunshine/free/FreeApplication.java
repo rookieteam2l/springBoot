@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @author fq
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @MapperScan("com.sunshine.free.dao")
 @ComponentScan("com.sunshine")
+@EnableSwagger2
 public class FreeApplication {
 
     public static void main(String[] args) {

@@ -1,6 +1,9 @@
 package com.sunshine.free.entity;
 
 
+import io.swagger.annotations.ApiModelProperty;
+
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,12 +11,19 @@ import java.util.Date;
  * @author Free
  * @date 2019-07-01
  */
-public class MdLoan {
+public class MdLoan implements Serializable {
 
+  private static final long serialVersionUID = 1L;
+
+  @ApiModelProperty(value="借款编码",dataType="String",name="id",example="3039a415993f4282b6fd70332982e695")
   private String id;
+  @ApiModelProperty(value="用户编码",dataType="String",name="userId",example="001")
   private String userId;
+  @ApiModelProperty(value="用户名",dataType="String",name="userName",example="3039a415993f4282b6fd70332982e695")
   private String userName;
+  @ApiModelProperty(value="电话",dataType="String",name="telephone")
   private String telephone;
+  @ApiModelProperty(value="地址",dataType="String",name="address")
   private String address;
   private double loanMoney;
   private String loanTerm;
