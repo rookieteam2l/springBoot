@@ -11,8 +11,8 @@ import org.springframework.context.annotation.ComponentScan;
  */
 
 @SpringBootApplication
-@MapperScan("com.sunshine.free.mapper")
-@ComponentScan(basePackages = {"com.sunshine.free.controller"})
+@MapperScan("com.sunshine.free.dao")
+@ComponentScan("com.sunshine")
 public class FreeApplication {
 
     public static void main(String[] args) {

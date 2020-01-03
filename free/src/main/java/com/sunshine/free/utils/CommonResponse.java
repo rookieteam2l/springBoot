@@ -1,5 +1,10 @@
 package com.sunshine.free.utils;
 
+/**
+ * @Description
+ * @author Free
+ * @date 2019-07-01
+ */
 public class CommonResponse<T> {
 
     private ResponseTypeEnums status;

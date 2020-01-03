@@ -3,28 +3,33 @@ package com.sunshine.free.entity;
 
 import java.util.Date;
 
+/**
+ * @Description 管理员信息
+ * @author Free
+ * @date 2019-07-01
+ */
 public class SmAdmin {
 
   private String id;
   private String userName;
   private String passWord;
   private String name;
-  private int gender;
+  private String gender;
   private Date birthday;
-  private String telePhone;
+  private String telephone;
   private String email;
-  private Date hiredate;
-  private String adress;
+  private Date hireDate;
+  private String address;
   private Date loginTime;
   private String reserve1;
-  private int reserve2;
+  private String reserve2;
   private String reserve3;
   private String reserve4;
   private String reserve5;
   private String createId;
   private Date createTime;
-  private int deleteStatus;
-  private int enableStatus;
+  private String deleteStatus;
+  private String enableStatus;
   private String updateId;
   private Date updateTime;
 
@@ -61,11 +66,11 @@ public class SmAdmin {
     this.name = name;
   }
 
-  public int getGender() {
+  public String getGender() {
     return gender;
   }
 
-  public void setGender(int gender) {
+  public void setGender(String gender) {
     this.gender = gender;
   }
 
@@ -77,12 +82,12 @@ public class SmAdmin {
     this.birthday = birthday;
   }
 
-  public String getTelePhone() {
-    return telePhone;
+  public String getTelephone() {
+    return telephone;
   }
 
-  public void setTelePhone(String telePhone) {
-    this.telePhone = telePhone;
+  public void setTelephone(String telephone) {
+    this.telephone = telephone;
   }
 
   public String getEmail() {
@@ -93,20 +98,20 @@ public class SmAdmin {
     this.email = email;
   }
 
-  public Date getHiredate() {
-    return hiredate;
+  public Date getHireDate() {
+    return hireDate;
   }
 
-  public void setHiredate(Date hiredate) {
-    this.hiredate = hiredate;
+  public void setHireDate(Date hireDate) {
+    this.hireDate = hireDate;
   }
 
-  public String getAdress() {
-    return adress;
+  public String getAddress() {
+    return address;
   }
 
-  public void setAdress(String adress) {
-    this.adress = adress;
+  public void setAddress(String address) {
+    this.address = address;
   }
 
   public Date getLoginTime() {
@@ -125,11 +130,11 @@ public class SmAdmin {
     this.reserve1 = reserve1;
   }
 
-  public int getReserve2() {
+  public String getReserve2() {
     return reserve2;
   }
 
-  public void setReserve2(int reserve2) {
+  public void setReserve2(String reserve2) {
     this.reserve2 = reserve2;
   }
 
@@ -173,19 +178,19 @@ public class SmAdmin {
     this.createTime = createTime;
   }
 
-  public int getDeleteStatus() {
+  public String getDeleteStatus() {
     return deleteStatus;
   }
 
-  public void setDeleteStatus(int deleteStatus) {
+  public void setDeleteStatus(String deleteStatus) {
     this.deleteStatus = deleteStatus;
   }
 
-  public int getEnableStatus() {
+  public String getEnableStatus() {
     return enableStatus;
   }
 
-  public void setEnableStatus(int enableStatus) {
+  public void setEnableStatus(String enableStatus) {
     this.enableStatus = enableStatus;
   }
 

@@ -3,6 +3,11 @@ package com.sunshine.free.entity;
 
 import java.util.Date;
 
+/**
+ * @Description 项目投标记录信息
+ * @author Free
+ * @date 2019-07-01
+ */
 public class MdProjectbidding {
 
   private String id;
@@ -21,8 +26,8 @@ public class MdProjectbidding {
   private String reserve5;
   private String createId;
   private Date createTime;
-  private int deleteStatus;
-  private int enableStatus;
+  private String deleteStatus;
+  private String enableStatus;
   private String updateId;
   private Date updateTime;
 
@@ -155,19 +160,19 @@ public class MdProjectbidding {
     this.createTime = createTime;
   }
 
-  public int getDeleteStatus() {
+  public String getDeleteStatus() {
     return deleteStatus;
   }
 
-  public void setDeleteStatus(int deleteStatus) {
+  public void setDeleteStatus(String deleteStatus) {
     this.deleteStatus = deleteStatus;
   }
 
-  public int getEnableStatus() {
+  public String getEnableStatus() {
     return enableStatus;
   }
 
-  public void setEnableStatus(int enableStatus) {
+  public void setEnableStatus(String enableStatus) {
     this.enableStatus = enableStatus;
   }
 

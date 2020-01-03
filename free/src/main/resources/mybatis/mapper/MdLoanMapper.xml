@@ -1,13 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sunshine.free.dao.MdLoanMapper">
+<mapper namespace="com.sunshine.free.dao.MdLoanMapper" >
 
-<!--    <insert id="addLoan" parameterType="com.sunshine.free.VO.MdLoanVO">
+    <resultMap id="MdLoanMap" type="com.sunshine.free.entity.MdLoan">
+        <result property="userId"   column="user_id"   />
+    </resultMap>
 
-    </insert>-->
+    <sql id="selectMdLoan">
+        id, User_ID,User_Name, Telephone, Address, LoanMoney, LoanTerm, LoanTime, LoanMode, LoanUse,
+        ApprovalStatus, LoanStatus, Reserve1, Reserve2, Reserve3, Reserve4, Reserve5, Create_Id,
+        Create_Time, Delete_Status, Enable_Status, Update_ID, Update_Time
 
-    <select id="getMdLoan" resultMap="com.sunshine.free.entity.MdLoan">
-        select * from md_loan
+    </sql>
+
+    <insert id="addLoan" parameterType="com.sunshine.free.vo.MdLoanVO">
+        INSERT INTO md_loan(
+        <if test="id != null and id != ''">id,</if>
+        <if test="userId != null and userId != ''">User_ID,</if>
+        <if test="userName != null and userName != ''">User_Name,</if>
+        <if test="telephone != null and telephone != ''">Telephone,</if>
+        <if test="address != null and address != ''">Address,</if>
+        <if test="loanMoney != null and loanMoney != ''">LoanMoney,</if>
+        <if test="loanTerm != null and loanTerm != ''">LoanTerm,</if>
+        LoanTime,
+        <if test="loanMode != null and loanMode != ''">LoanMode,</if>
+        <if test="loanUse != null and loanUse != ''">LoanUse,</if>
+        <if test="approvalStatus != null and approvalStatus != ''">ApprovalStatus,</if>
+        <if test="loanStatus != null and loanStatus != ''">LoanStatus,</if>
+        <if test="reserve1 != null and reserve1 != ''">Reserve1,</if>
+        <if test="reserve2 != null and reserve2 != ''">Reserve2,</if>
+        <if test="reserve3 != null and reserve3 != ''">Reserve3,</if>
+        <if test="reserve4 != null and reserve4 != ''">Reserve4,</if>
+        <if test="reserve5 != null and reserve5 != ''">Reserve5,</if>
+        <if test="createId != null and createId != ''">Create_Id,</if>
+        Create_Time,
+        <if test="deleteStatus != null and deleteStatus != ''">Delete_Status,</if>
+        <if test="enableStatus != null and enableStatus != ''">Enable_Status,</if>
+        <if test="updateId != null and updateId != ''">Update_ID,</if>
+        Update_Time
+        )values(
+        <if test="id != null and id != ''">#{id},</if>
+        <if test="userId != null and userId != ''">#{userId},</if>
+        <if test="userName != null and userName != ''">#{userName},</if>
+        <if test="telephone != null and telephone != ''">#{telephone},</if>
+        <if test="address != null and address != ''">#{address},</if>
+        <if test="loanMoney != null and loanMoney != ''">#{loanMoney},</if>
+        <if test="loanTerm != null and loanTerm != ''">#{loanTerm},</if>
+        now(),
+        <if test="loanMode != null and loanMode != ''">#{loanMode},</if>
+        <if test="loanUse != null and loanUse != ''">#{loanUse},</if>
+        <if test="approvalStatus != null and approvalStatus != ''">#{approvalStatus},</if>
+        <if test="loanStatus != null and loanStatus != ''">#{loanStatus},</if>
+        <if test="reserve1 != null and reserve1 != ''">#{reserve1},</if>
+        <if test="reserve2 != null and reserve2 != ''">#{reserve2},</if>
+        <if test="reserve3 != null and reserve3 != ''">#{reserve3},</if>
+        <if test="reserve4 != null and reserve4 != ''">#{reserve4},</if>
+        <if test="reserve5 != null and reserve5 != ''">#{reserve5},</if>
+        <if test="createId != null and createId != ''">#{createId},</if>
+        now(),
+        <if test="deleteStatus != null and deleteStatus != ''">#{deleteStatus},</if>
+        <if test="enableStatus != null and enableStatus != ''">#{enableStatus},</if>
+        <if test="updateId != null and updateId != ''">#{updateId},</if>
+        now()
+        )
+    </insert>
+
+
+    <select id="getMdLoan" parameterType="com.sunshine.free.vo.MdLoanVO" resultType="com.sunshine.free.entity.MdLoan">
+        select
+        <include refid="selectMdLoan"/>
+        from md_loan
+        where 1=1
+        <if test="userName != null and userName != ''">
+        and user_name like concat ('%', #{userName},'%')
+        </if>
+        <if test="telephone != null and telephone != ''">
+            and telephone like concat ('%', #{telephone},'%')
+        </if>
+        <if test="minMoney != null and minMoney != ''">
+            and loanMoney <![CDATA[ >= ]]> #{minMoney}
+        </if>
+        <if test="maxMoney != null and maxMoney != ''">
+            and loanMoney <![CDATA[ <= ]]> #{maxMoney}
+        </if>
+        <if test="approvalStatus != null and approvalStatus != ''">
+            and approvalStatus = #{approvalStatus}
+        </if>
+        order by Create_Time desc
     </select>
+
+    <update id="updateApprovalStatus">
+        update md_loan
+        set ApprovalStatus = #{approvalStatus}
+        where User_ID in
+        <foreach item="mdLoanId" collection="array" open="(" separator="," close=")">
+            #{mdLoanId}
+        </foreach>
+    </update>
 </mapper>
   

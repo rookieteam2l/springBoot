@@ -1,65 +1,53 @@
 package com.sunshine.free;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class test {
 
     public static void main(String[] args) {
-        List<user> list1 =  new ArrayList<>();
-        List<user> list2 =  new ArrayList<>();
-        List<user> list3 =  new ArrayList<>();
 
-        user p = new user(1,"苹果",55);
-        user x = new user(2,"香蕉",99);
-        user l = new user(3,"梨",66);
+       int[] nums1 = {4,9,5};
+       int[] nums2 = {9,4,9,8,4};
 
-        user p1 = new user(1,"苹果",88);
-        user x1 = new user(2,"香蕉",88);
-        user l2 = new user(3,"梨",88);
-
-
-        user p2 = new user(1,"苹果",55);
-        user x2 = new user(2,"香蕉",99);
+        int[] intersection = intersection(nums1, nums2);
+        LocalDate now = LocalDate.now();
+        LocalTime now1 = LocalTime.now();
+        LocalDateTime now2 = LocalDateTime.now();
+        System.out.println(now);
+        System.out.println(now1);
+        System.out.println(now2);
 
 
-        list1.add(p);
-        list1.add(x);
-        list1.add(l);
+    }
 
-        list2.add(p1);
-        list2.add(x1);
-        list2.add(l2);
+    public static int[] intersection(int[] nums1, int[] nums2) {
 
-        list3.add(p2);
-        list3.add(x2);
-        Boolean flag= true;
-        for (int i=0; i<list1.size(); i++){
+        HashSet<Integer> set1 = new HashSet(nums1.length);
+        HashSet<Integer> set2 = new HashSet();
 
-            for (int j=0; j<list2.size();j++){
-
-                if (list1.get(i).getId()==list2.get(j).getId()){
-
-                    for (int k=0; k<list3.size();k++){
-
-                        if (list1.get(i).getId()==list3.get(k).getId()){
-                            flag= false;
-                            if (list1.get(i).getPrice()>list2.get(j).getPrice()){
-                                list1.get(i).setPrice(list2.get(j).getPrice());
-
-                            }
-                        }
-                    }
-
-                    if (flag){
-                        list1.get(i).setPrice(list2.get(j).getPrice());
-                    }
-                    flag=true;
-                }
-
+        for(Integer num : nums1){
+            set1.add(num);
+        }
+        for(Integer num2: nums2){
+            if(set1.contains(num2)){
+                set2.add(num2);
             }
         }
 
-        System.out.println(list1);
+        int [] set3 = new int[set2.size()];
+        int idx = 0;
+        for(Integer num : set2){
+            set3[idx]=num;
+            idx++;
+        }
+
+        set1.retainAll(set2);
+        System.out.println(set1);
+        return set3;
     }
 }

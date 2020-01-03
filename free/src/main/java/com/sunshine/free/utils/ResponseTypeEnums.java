@@ -3,7 +3,7 @@ package com.sunshine.free.utils;
 /**
  * @ClassName:ResponseTypeEnums
  * @Descrition:返回结果状态
- * @auto FQ
+ * @author Free
  * @date 2019-06-20
  */
 public enum ResponseTypeEnums {
@@ -22,7 +22,7 @@ public enum ResponseTypeEnums {
     /**
      * 处理中
      */
-    FROCESSING,
+    PROCESSING,
 
     /**
      * 异常

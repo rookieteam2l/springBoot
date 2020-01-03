@@ -20,6 +20,6 @@ public class FrontIndexController {
     public @ResponseBody CommonResponse<User> getProject(User user){
 
         System.out.println(user);
-        return new CommonResponse<User>(ResponseTypeEnums.SUCCESS,null,null,user);
+        return new CommonResponse<>(ResponseTypeEnums.SUCCESS,null,null,user);
     }
 }

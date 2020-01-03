@@ -1,0 +1,40 @@
+
+#  Tomcat  服务配置
+server:
+  port: 8082
+
+# thymeleaf 配置
+spring:
+  thymeleaf:
+    cache: false
+    suffix: .html
+    encoding: UTF-8
+    prefix: classpath:/templates/ #调整页面路径
+    servlet:
+      content-type: text/html
+    mode: HTML5
+
+  #静态资源路径配置
+  mvc:
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/static/
+
+  #数据源配置
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/p2p?serverTimezone=GMT
+    username: root
+    password: 178003026
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.sunshine.free.entity
+  #config-locations: classpath:mybatis/mybatis-config.xml
+  configuration:
+    map-underscore-to-camel-case: true #开启驼峰映射
+
+logging:
+  level:
+    #打印SQL信息
+    com.sunshine.free.dao: debug

@@ -2,6 +2,7 @@
 #  Tomcat  服务配置
 server:
   port: 8082
+
 # thymeleaf 配置
 spring:
   thymeleaf:
@@ -19,16 +20,13 @@ spring:
   resources:
     static-locations: classpath:/static/
 
-
-
-
 #数据源配置
   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/p2p?serverTimezone=GMT
     username: root
-    password: 178003026
-#    driver-class-name: com.mysql.jdbc.Driver
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 123456
 
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
@@ -40,8 +38,10 @@ mybatis:
 logging:
   level:
     #打印SQL信息
-    com：
-      example：
-        demo：
-           mapper: debug
-
+    com.sunshine: debug
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+  page-size-zero: true

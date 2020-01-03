@@ -1,32 +1,32 @@
 package com.sunshine.free.utils;
 
 /**
- * @ClassName:ResponseTypeEnums
- * @Descrition:返回结果状态
+ * @ClassName:
+ * @Descrition:
  * @author Free
  * @date 2019-06-20
  */
-public enum ResponseTypeEnums {
+public enum StatusEnums {
 
-    /**
-     * 成功
-     */
-    SUCCESS,
+    OK("0", "正常"), DISABLE("1", "停用"), DELETED("-1", "删除");
 
-    /**
-     *失败
-     */
-    FAILED,
+    private final String code;
+    private final String info;
 
+    StatusEnums(String code, String info)
+    {
+        this.code = code;
+        this.info = info;
+    }
 
-    /**
-     * 处理中
-     */
-    PROCESSING,
+    public String getCode()
+    {
+        return code;
+    }
 
-    /**
-     * 异常
-     */
-    EXCEPTION
+    public String getInfo()
+    {
+        return info;
+    }
 
 }

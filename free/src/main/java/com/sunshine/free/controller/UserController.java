@@ -1,7 +1,7 @@
 package com.sunshine.free.controller;
 
 import com.sunshine.free.entity.User;
-import com.sunshine.free.mapper.UserMapper;
+import com.sunshine.free.dao.UserMapper;
 import com.sunshine.free.utils.CommonResponse;
 import com.sunshine.free.utils.ResponseTypeEnums;
 import org.springframework.beans.factory.annotation.Autowired;

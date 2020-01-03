@@ -58,32 +58,33 @@
             <p>6、资产证明（房产证、车辆登记证、定期存款等、此项可选）。</p>
 
           </div>
+          <form>
           <div class="middle_right">
             <div class="right_jk">
               填写借款申请
             </div>
             <span class="ss1">申请人：</span>
-            <input type="text" value="18817885259" />
+            <input type="text" v-model="addFrom.userName" />
             <span >手机号码</span>
-            <input type="text" value="18817885259" />
+            <input type="text" v-model="addFrom.telephone" />
             <span >所在地区</span>
-            <input type="text" />
+            <input type="text" v-model="addFrom.address"/>
             <span >借款金额</span>
-            <input class="i1" type="text" placeholder="                                                                万"/>
+            <input class="i1" type="text" v-model="loanMoney" placeholder="                                                                万"/>
             <span >借款期限</span>
-            <input class="i1" type="text" placeholder="                                                                月"/>
+            <input class="i1" type="text" v-model="loanTerm"  placeholder="                                                                月"/>
             <span >借款方式</span>
-            <select>
-              <option value="-1">请选择</option>
-              <option value="信用">信用</option>
-              <option value="质押">质押</option>
-              <option value="抵押">抵押</option>
-              <option value="担保">担保</option>
+            <select v-model="addFrom.loanMode">
+              <option disabled value="">请选择</option>
+              <option value="1">信用</option>
+              <option value="2">质押</option>
+              <option value="3">抵押</option>
+              <option value="4">担保</option>
             </select>
 
             <span >借款用途</span>
-            <select>
-              <option value="-1">请选择用途</option>
+            <select v-model="addFrom.loanUse">
+              <option disabled value="">请选择用途</option>
               <option value="1">短期周转</option>
               <option value="2">生意周转</option>
               <option value="3">生活周转</option>
@@ -94,33 +95,21 @@
             </select>
 
             <span>验证码：</span>
-            <input class="yzm" />
-            <img src="../../static/img/yzm.jpg"/>
+            <input class="yzm"  v-model="code"/>
+            <img alt="验证码" @click="getImg" :src="iSrc" />
+            <!--<img src="../../static/img/yzm.jpg"/>-->
             <a>换一张</a>
-            <p>提交申请</p>
+            <p @click="submit">提交申请</p>
           </div>
+         </form>
         </div>
-
-
-
-
       </div>
-
-
-
-
-
-
-
 
     </div>
 
-
     <!--底部--><!--底部--><!--底部--><!--底部--><!--底部--><!--底部-->
 
-
     <div class="bottom">
-
       <div class="bottom_content">
         <ul class="bottom_ul">
           <li>关于我们</li>
@@ -176,10 +165,80 @@
 export default {
   name: 'loan',
   data () {
+
     return {
+      addFrom:[{
+        userName:'',
+        telephone:'',
+        address:'',
+        loanMode:'',
+        loanUse:'',
+      }],
+
+      loanMoney:'',
+      loanTerm:'',
+      code:'',
+      iSrc:'',
 
     }
-  }
+  },
+
+  methods: {
+
+    loadInit(){
+      debugger;
+      this.$axios({
+        method: 'post',
+        url: '/api/loan/loan/getUser',
+        data: this.qs.stringify({    //这里是发送给后台的数据
+
+        })
+      }).then((response) => {          //这里使用了ES6的语法
+        console.log(response);
+        this.addFrom = response.data.result;//请求成功返回的数据
+      }).catch((error) => {
+        console.log(error)       //请求失败返回的数据
+      })
+    },
+
+
+    getImg(){
+      this.$axios({
+        method: 'post',
+        url: '/api/defaultKaptcha?d=\'+new Date()*1',
+        data: this.qs.stringify({    //这里是发送给后台的数据
+
+        })
+      }).then((response) => {          //这里使用了ES6的语法
+        console.log(response);//请求成功返回的数据
+        this.iSrc='data:image/jpeg;base64,'+ response.data.img;
+      }).catch((error) => {
+        console.log(error)       //请求失败返回的数据
+      })
+    },
+
+
+    submit(){
+
+      let param = Object.assign({}, this.addFrom);
+      param.loanMoney = this.loanMoney;
+      param.loanTerm = this.loanTerm;
+      param.code = this.code;
+      this.$axios.post('/api/loan/loan/addLoan',param).then((response) => {          //这里使用了ES6的语法
+        console.log(response);
+        if (response.data.status=='SUCCESS') {
+          this.$router.push('/myAccount');
+        }
+      }).catch((error) => {
+        console.log(error)       //请求失败返回的数据
+      })
+    }
+  },
+
+  mounted() {
+    this.loadInit();
+    this.getImg();
+  },
 }
 </script>
 

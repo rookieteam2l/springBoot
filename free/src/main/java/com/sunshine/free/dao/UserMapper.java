@@ -1,11 +1,15 @@
-package com.sunshine.free.mapper;
+package com.sunshine.free.dao;
 
 import com.sunshine.free.entity.User;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
-@Mapper
+/**
+ * @Description UserMapper
+ * @author Free
+ * @date 2019-07-01
+ */
 public interface UserMapper {
 
     @Select("select * from sm_user where 1=1")

@@ -9,13 +9,13 @@ public class SmUser {
   private String userName;
   private String passWord;
   private String name;
-  private int gender;
+  private String gender;
   private Date birthday;
-  private String telePhone;
+  private String telephone;
   private String email;
   private String idCard;
-  private String adress;
-  private Date loginTime;
+  private String address;
+  private Date logStringime;
   private String reserve1;
   private String reserve2;
   private String reserve3;
@@ -23,8 +23,8 @@ public class SmUser {
   private String reserve5;
   private String createId;
   private Date createTime;
-  private int deleteStatus;
-  private int enableStatus;
+  private String deleteStatus;
+  private String enableStatus;
   private String updateId;
   private Date updateTime;
 
@@ -60,11 +60,11 @@ public class SmUser {
     this.name = name;
   }
 
-  public int getGender() {
+  public String getGender() {
     return gender;
   }
 
-  public void setGender(int gender) {
+  public void setGender(String gender) {
     this.gender = gender;
   }
 
@@ -76,12 +76,12 @@ public class SmUser {
     this.birthday = birthday;
   }
 
-  public String getTelePhone() {
-    return telePhone;
+  public String getTelephone() {
+    return telephone;
   }
 
-  public void setTelePhone(String telePhone) {
-    this.telePhone = telePhone;
+  public void setTelephone(String telephone) {
+    this.telephone = telephone;
   }
 
   public String getEmail() {
@@ -100,20 +100,20 @@ public class SmUser {
     this.idCard = idCard;
   }
 
-  public String getAdress() {
-    return adress;
+  public String getAddress() {
+    return address;
   }
 
-  public void setAdress(String adress) {
-    this.adress = adress;
+  public void setAddress(String address) {
+    this.address = address;
   }
 
-  public Date getLoginTime() {
-    return loginTime;
+  public Date getLogStringime() {
+    return logStringime;
   }
 
-  public void setLoginTime(Date loginTime) {
-    this.loginTime = loginTime;
+  public void setLogStringime(Date logStringime) {
+    this.logStringime = logStringime;
   }
 
   public String getReserve1() {
@@ -172,19 +172,19 @@ public class SmUser {
     this.createTime = createTime;
   }
 
-  public int getDeleteStatus() {
+  public String getDeleteStatus() {
     return deleteStatus;
   }
 
-  public void setDeleteStatus(int deleteStatus) {
+  public void setDeleteStatus(String deleteStatus) {
     this.deleteStatus = deleteStatus;
   }
 
-  public int getEnableStatus() {
+  public String getEnableStatus() {
     return enableStatus;
   }
 
-  public void setEnableStatus(int enableStatus) {
+  public void setEnableStatus(String enableStatus) {
     this.enableStatus = enableStatus;
   }
 
