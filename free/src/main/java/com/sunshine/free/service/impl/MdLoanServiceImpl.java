@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ import java.util.List;
 @Service
 public class MdLoanServiceImpl implements MdLoanService {
 
-    @Autowired
+    @Resource
     private MdLoanMapper mdLoanMapper;
 
     /**
@@ -68,7 +69,7 @@ public class MdLoanServiceImpl implements MdLoanService {
      * @date 2019/8/1 16:38
      */
     @Override
-    public int updateApprovalStatus(@Param("mdLoanId") String[] mdLoanId,@Param("approvalStatus") String approvalStatus) {
+    public int updateApprovalStatus(String[] mdLoanId,String approvalStatus) {
         return mdLoanMapper.updateApprovalStatus(mdLoanId,approvalStatus);
     }
 }

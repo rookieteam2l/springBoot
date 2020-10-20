@@ -35,7 +35,7 @@
 								<img class="nav-user-photo" src="/static/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									欢迎您<br />
-									张三丰
+									XXX
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -331,8 +331,8 @@
 														<td th:text="${mdLoan.id}" hidden></td>
 														<td>
 															<div class="hidden-sm hidden-xs btn-group">
-																<span class="label label-inverse arrowed" onclick="batch_update(0)" >撤回</span>
-																<span class="label label-success arrowed-in arrowed-in-right" onclick="batch_update(1)" >审核通过</span>
+																<span class="label label-inverse arrowed" onclick="batch_update(3)" >撤回</span>
+																<span class="label label-success arrowed-in arrowed-in-right" onclick="batch_update(2)" >审核通过</span>
 															</div>
 														</td>
 													</tr>
@@ -446,6 +446,7 @@
 					$("input:checkbox[name='ids']:checked").each(function(){
 						if($(this).prop("checked")){ //如果值为checked表明选中了
 							//alert($(this).closest('tr').find('td').eq(9).text()); //获取eq为9的那一列数据
+							debugger
 							var id = $(this).closest('tr').find('td').eq(9).text();
 							mdLoanIds.push(id);
 						}

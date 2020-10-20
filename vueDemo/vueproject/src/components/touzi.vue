@@ -261,7 +261,7 @@ export default {
   data () {
     return {
       money:'',
-      proDate:'2019-07-15 13:10:01',
+      proDate:'2020-05-21 13:10:01',
       dayDiff:0, //天
       hours:0, // 时
       minutes:0, //分

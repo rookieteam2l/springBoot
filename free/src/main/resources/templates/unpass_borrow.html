@@ -291,8 +291,13 @@
 												</thead>
 
 												<tbody>
-													<tr>
-														
+													<tr th:each="mdLoan:${pageInfo.list}">
+														<td class="center">
+															<label class="position-relative">
+																<input type="checkbox" class="ace" />
+																<span class="lbl"></span>
+															</label>
+														</td>
 														<td>wudang</td>
 														<td>13512345678</td>
 				                                        <td>河南郑州</td>

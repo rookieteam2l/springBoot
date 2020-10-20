@@ -228,5 +228,32 @@ public class MdLoan implements Serializable {
     this.updateTime = updateTime;
   }
 
-
+  @Override
+  public String toString() {
+    return "MdLoan{" +
+            "id='" + id + '\'' +
+            ", userId='" + userId + '\'' +
+            ", userName='" + userName + '\'' +
+            ", telephone='" + telephone + '\'' +
+            ", address='" + address + '\'' +
+            ", loanMoney=" + loanMoney +
+            ", loanTerm='" + loanTerm + '\'' +
+            ", loanTime=" + loanTime +
+            ", loanMode='" + loanMode + '\'' +
+            ", loanUse='" + loanUse + '\'' +
+            ", approvalStatus='" + approvalStatus + '\'' +
+            ", loanStatus='" + loanStatus + '\'' +
+            ", reserve1='" + reserve1 + '\'' +
+            ", reserve2='" + reserve2 + '\'' +
+            ", reserve3='" + reserve3 + '\'' +
+            ", reserve4='" + reserve4 + '\'' +
+            ", reserve5='" + reserve5 + '\'' +
+            ", createId='" + createId + '\'' +
+            ", createTime=" + createTime +
+            ", deleteStatus='" + deleteStatus + '\'' +
+            ", enableStatus='" + enableStatus + '\'' +
+            ", updateId='" + updateId + '\'' +
+            ", updateTime=" + updateTime +
+            '}';
+  }
 }

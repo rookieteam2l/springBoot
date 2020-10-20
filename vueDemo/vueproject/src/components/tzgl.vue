@@ -269,6 +269,7 @@ export default {
       $.each(tab_li,function(index,value){
         $(this).click(function(){
           $(this).css('color','#f7772c').css('borderBottom','none').siblings().css('color','#665d56').css('borderBottom','#e7e7e7 solid 1px');
+          '#f70a11'
         });
       });
     }

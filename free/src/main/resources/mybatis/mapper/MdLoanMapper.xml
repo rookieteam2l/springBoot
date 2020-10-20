@@ -92,9 +92,9 @@
     <update id="updateApprovalStatus">
         update md_loan
         set ApprovalStatus = #{approvalStatus}
-        where User_ID in
-        <foreach item="mdLoanId" collection="array" open="(" separator="," close=")">
-            #{mdLoanId}
+        where id in
+        <foreach  item="id" collection="mdLoanId" open="(" separator="," close=")">
+            #{id}
         </foreach>
     </update>
 </mapper>

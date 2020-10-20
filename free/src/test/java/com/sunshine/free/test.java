@@ -1,53 +1,45 @@
 package com.sunshine.free;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class test {
 
     public static void main(String[] args) {
 
-       int[] nums1 = {4,9,5};
-       int[] nums2 = {9,4,9,8,4};
+        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map1 = new HashMap<>();
 
-        int[] intersection = intersection(nums1, nums2);
-        LocalDate now = LocalDate.now();
-        LocalTime now1 = LocalTime.now();
-        LocalDateTime now2 = LocalDateTime.now();
+        map.put("a",1);
+        map.put("a",2);
+        map1.put("a",2);
+        map1.put("d",2);
+
+        map.putAll(map1);
+
+        System.out.println(map.size());
+
+        add();
+
+        System.out.println(LocalDate.now());
+        System.out.println(LocalDate.of(2020,7,1));
+        System.out.println(LocalDateTime.now());
+
+        System.out.println(new Date());
+
+        String ss= "FDASFEafddsdDWQDFDSAEADWQczadwDSADWEFDSFEFEAF";
+
+
+    }
+
+    public static void add() {
+        Instant now = Instant.now();
         System.out.println(now);
-        System.out.println(now1);
-        System.out.println(now2);
 
-
+        HashMap<Object, Object> map = new HashMap<>();
     }
 
-    public static int[] intersection(int[] nums1, int[] nums2) {
 
-        HashSet<Integer> set1 = new HashSet(nums1.length);
-        HashSet<Integer> set2 = new HashSet();
-
-        for(Integer num : nums1){
-            set1.add(num);
-        }
-        for(Integer num2: nums2){
-            if(set1.contains(num2)){
-                set2.add(num2);
-            }
-        }
-
-        int [] set3 = new int[set2.size()];
-        int idx = 0;
-        for(Integer num : set2){
-            set3[idx]=num;
-            idx++;
-        }
-
-        set1.retainAll(set2);
-        System.out.println(set1);
-        return set3;
-    }
 }

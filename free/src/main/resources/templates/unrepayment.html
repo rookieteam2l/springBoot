@@ -307,11 +307,11 @@
 																<span class="lbl"></span>
 															</label>
 														</td>
-														<td>wudang</td>
-														<td>体验标</td>
-				                                        <td><span class="label label-sm label-warning">13512345678</span></td>
-				                                        <td>￥1000000</td>
-														<td>12月</td>
+														<td th:text="${mdLoan.userName}">wudang</td>
+														<td >体验标</td>
+				                                        <td th:text="${mdLoan.telephone}><span class="label label-sm label-warning"></span></td>
+				                                        <td th:text="'￥'+ ${mdLoan.loanMoney}"></td>
+														<td th:text="${mdLoan.loanTerm}+'月'"></td>
 				                                        <td><span class="label label-sm label-warning">信用</span></td>
 				                                        <td>贷款买车</td>
 				                                        <td>2018-07-01 13:32:21</td>

@@ -282,6 +282,7 @@ export default {
     },
 
     init() {
+
       let projectStatus =0;
       let rate =0;
       let term =0;
@@ -422,7 +423,7 @@ export default {
 
   mounted(){
    // this.postceshi();
-   // this.init();
+    this.init();
 
   }
   }

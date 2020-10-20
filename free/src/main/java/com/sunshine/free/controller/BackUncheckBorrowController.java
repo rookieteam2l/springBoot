@@ -36,6 +36,7 @@ public class BackUncheckBorrowController {
     public String getUncheckBorrow(Model model , MdLoanVO mdLoanVO,@RequestParam(defaultValue = "1") Integer pageNum){
 
         PageHelper.startPage(pageNum,10);
+        mdLoanVO.setApprovalStatus("1");
         List<MdLoan> mdLoan = mdLoanService.getMdLoan(mdLoanVO);
         PageInfo<MdLoan> pageInfo = new PageInfo<>(mdLoan);
         model.addAttribute("pageInfo",pageInfo);

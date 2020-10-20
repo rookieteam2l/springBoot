@@ -2,6 +2,9 @@ package com.sunshine.free.service;
 
 import com.sunshine.free.vo.MdLoanVO;
 import com.sunshine.free.entity.MdLoan;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 
@@ -12,6 +15,7 @@ import java.util.List;
  * @Modified By:
  * @Version:
  */
+@CacheConfig(cacheNames = "Mdloan")
 public interface MdLoanService {
 
     /**
@@ -30,6 +34,7 @@ public interface MdLoanService {
      * @author Free
      * @date 2019/8/1 15:09
      */
+    //@Cacheable(key = "#p0") 缓存到redis
     List<MdLoan> getMdLoan(MdLoanVO mdLoanVO);
 
     /**
@@ -39,15 +44,18 @@ public interface MdLoanService {
      * @author Free
      * @date 2019/8/1 16:28
      */
+    //@CachePut(key = "#p0.id")
     int update(MdLoanVO mdLoanVO);
 
     /**
      * 功能描述: 批量更新借款状态
      * @param mdLoanId
+     * @param approvalStatus
      * @return int
      * @author Free
      * @date 2019/8/1 16:38
      */
+    //@CachePut(key = "#p0.id")
     int updateApprovalStatus(String[] mdLoanId,String approvalStatus);
 
 }

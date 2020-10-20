@@ -3,6 +3,8 @@ package com.sunshine.free.dao;
 import com.sunshine.free.vo.MdLoanVO;
 import com.sunshine.free.entity.MdLoan;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 /**
@@ -33,9 +35,10 @@ public interface MdLoanMapper {
     /**
      * 功能描述: 批量更新借款状态
      * @param mdLoanId
+     * @param approvalStatus
      * @return int
      * @author Free
      * @date 2019/8/1 16:38
      */
-    int updateApprovalStatus(String[] mdLoanId,String approvalStatus);
+    int updateApprovalStatus(@Param("mdLoanId") String[] mdLoanId, @Param("approvalStatus") String approvalStatus);
 }
